@@ -1,0 +1,19 @@
+{
+    "name": "GameEntry",
+    "rootNamespace": "",
+    "references": [
+        "YooAsset",
+        "HybridCLR.Runtime",
+        "YooAsset.Editor",
+        "WorldTree.UnityEditor"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
