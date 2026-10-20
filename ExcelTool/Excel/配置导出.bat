@@ -19,8 +19,8 @@ rem %%I 是这一轮的那一项，不是 set 出来的变量。写在 bat 里�
 
 rem %%~fI 取完整路径。
 
-for %%I in ("%SCRIPT_ROOT%\..\..\Luban\Luban.dll") do set "LUBAN_DLL=%%~fI"
-for %%I in ("%SCRIPT_ROOT%\..\..\Luban\Templates") do set "DIR_TEMPLATES=%%~fI"
+for %%I in ("%SCRIPT_ROOT%\..\Luban\Luban.dll") do set "LUBAN_DLL=%%~fI"
+for %%I in ("%SCRIPT_ROOT%\..\Luban\Templates") do set "DIR_TEMPLATES=%%~fI"
 for %%I in ("%SCRIPT_ROOT%\..\Output") do set "DIR_OUTPUT=%%~fI"
 
 rem Game 的入口。Start 只有 Localhost，没有其它环境。
