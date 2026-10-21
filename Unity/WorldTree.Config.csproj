@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -57,267 +57,17 @@
     <Analyzer Include="D:\Projects\WorldTreeWorkspace\Project\_Template\Unity\Assets\Plugins\Unity.Analysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\HotUpdate\Config\Client\CreateWorldConfigRule.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\Client\Generated\WorldLineConfig.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\LubanRuntime\BeanBase.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\Client\Generated\Tables.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\LubanRuntime\ByteBuf.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\Client\Generated\StartTables.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Config\Client\Generated\WorldLineConfigData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\HotUpdate\Config\WorldTree.Config.asmdef" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClothModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DSPGraphModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GridModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TLSModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextCoreFontEngineModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextCoreTextEngineModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsNativeModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UNETModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityCurlModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VFXModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XRModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.CoreModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.DeviceSimulatorModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.DiagnosticsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.GraphViewModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.PackageManagerUIModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.QuickSearchModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SceneTemplateModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TextCoreFontEngineModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TextCoreTextEngineModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIBuilderModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIElementsModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIElementsSamplesModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIServiceModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UnityConnectModule">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="WorldTree.Core">
       <HintPath>Assets\Plugins\WorldTree\WorldTree.Core.dll</HintPath>
     </Reference>
@@ -702,18 +452,6 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="WorldTree.HotFix.csproj">
-      <Project>{C61C92E9-69A5-D4AD-C7FD-530DB03BCE3E}</Project>
-      <Name>WorldTree.HotFix</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

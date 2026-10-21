@@ -19,7 +19,7 @@ using UnityEngine;
 namespace EditorTool
 {
 	//[CreateAssetMenu]
-	[FilePath("Assets/WorldTreeFramework/UnityEnvironment/EditorTool/EditorToolKitWindow/ToolPages/GuidePage/Assets/GuidePage.asset")]
+	[FilePath("Assets/Scripts/WorldTreeFramework/UnityEnvironment/Editor/EditorTool/EditorToolKitWindow/ToolPages/GuidePage/Assets/GuidePage.asset")]
     public class GuidePage : ScriptableSingleton<GuidePage>
     {
 

@@ -21,7 +21,7 @@ namespace EditorTool
 {
     public class ToolKitWindow : OdinMenuEditorWindow
     {
-        public static string rootPath = "Assets/SDHK/WorldTreeFramework/UnityEnvironment/EditorTool/EditorToolKitWindow/ToolPages/";
+        public static string rootPath = "Assets/Scripts/WorldTreeFramework/UnityEnvironment/Editor/EditorTool/EditorToolKitWindow/ToolPages/";
 
         //public WorldTreeCore Core;
 
@@ -56,10 +56,8 @@ namespace EditorTool
         protected override OdinMenuTree BuildMenuTree()
         {
             var tree = new OdinMenuTree(true);
-            //tree.AddAssetAtPath("关于", GuidePage.Inst.FilePath).AddIcon(EditorIcons.Info);
-            //tree.AddAssetAtPath("脚本工具", ScriptInitSetting.Inst.FilePath).AddIcon(EditorIcons.SingleUser);
-            //tree.AddAssetAtPath("资源编辑器", ScriptableEditor.Inst.FilePath);
-            //tree.AddAssetAtPath("实体绑定Mono", EntityBindMonoTool.Inst.FilePath);
+            tree.AddAssetAtPath("关于", GuidePage.Inst.FilePath).AddIcon(EditorIcons.Info);
+            tree.AddAssetAtPath("脚本工具", ScriptInitSetting.Inst.FilePath).AddIcon(EditorIcons.SingleUser);
 
             return tree;
         }

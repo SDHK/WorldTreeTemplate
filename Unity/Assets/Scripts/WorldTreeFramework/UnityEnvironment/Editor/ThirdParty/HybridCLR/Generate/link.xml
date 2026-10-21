@@ -3,8 +3,12 @@
   <assembly fullname="System">
     <type fullname="System.Diagnostics.Stopwatch" preserve="all" />
   </assembly>
+  <assembly fullname="System.Core">
+    <type fullname="System.Linq.Enumerable" preserve="all" />
+  </assembly>
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.AnimationCurve" preserve="all" />
+    <type fullname="UnityEngine.Application" preserve="all" />
     <type fullname="UnityEngine.AsyncOperation" preserve="all" />
     <type fullname="UnityEngine.Bounds" preserve="all" />
     <type fullname="UnityEngine.Color" preserve="all" />
@@ -85,8 +89,7 @@
     <type fullname="WorldTree.ComponentBranch" preserve="all" />
     <type fullname="WorldTree.ComponentBranchSupplement" preserve="all" />
     <type fullname="WorldTree.ComponentOf`1" preserve="all" />
-    <type fullname="WorldTree.ConfigGroup`2" preserve="all" />
-    <type fullname="WorldTree.Config`1" preserve="all" />
+    <type fullname="WorldTree.ConfigManager" preserve="all" />
     <type fullname="WorldTree.CoreObject" preserve="all" />
     <type fullname="WorldTree.Cut" preserve="all" />
     <type fullname="WorldTree.Disable" preserve="all" />
@@ -240,6 +243,10 @@
     <type fullname="WorldTree.ViewTestWindow" preserve="all" />
     <type fullname="WorldTree.WindowManager" preserve="all" />
   </assembly>
+  <assembly fullname="WorldTree.ThirdParty">
+    <type fullname="Luban.BeanBase" preserve="all" />
+    <type fullname="Luban.ByteBuf" preserve="all" />
+  </assembly>
   <assembly fullname="YooAsset">
     <type fullname="YooAsset.AssetHandle" preserve="all" />
     <type fullname="YooAsset.AsyncOperationBase" preserve="all" />
@@ -256,14 +263,20 @@
   <assembly fullname="mscorlib">
     <type fullname="System.Action" preserve="all" />
     <type fullname="System.Action`1" preserve="all" />
+    <type fullname="System.Activator" preserve="all" />
     <type fullname="System.AppDomain" preserve="all" />
     <type fullname="System.Array" preserve="all" />
     <type fullname="System.Attribute" preserve="all" />
     <type fullname="System.Boolean" preserve="all" />
     <type fullname="System.Byte" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2" preserve="all" />
+    <type fullname="System.Collections.Generic.IEnumerable`1" preserve="all" />
+    <type fullname="System.Collections.Generic.IEnumerator`1" preserve="all" />
+    <type fullname="System.Collections.Generic.IReadOnlyDictionary`2" preserve="all" />
+    <type fullname="System.Collections.Generic.IReadOnlyList`1" preserve="all" />
     <type fullname="System.Collections.Generic.List`1" preserve="all" />
     <type fullname="System.Collections.Generic.List`1/Enumerator" preserve="all" />
+    <type fullname="System.Collections.IEnumerator" preserve="all" />
     <type fullname="System.DateTime" preserve="all" />
     <type fullname="System.Delegate" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
@@ -276,6 +289,7 @@
     <type fullname="System.Func`2" preserve="all" />
     <type fullname="System.IDisposable" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
+    <type fullname="System.IO.FileNotFoundException" preserve="all" />
     <type fullname="System.IO.Path" preserve="all" />
     <type fullname="System.Int32" preserve="all" />
     <type fullname="System.Int64" preserve="all" />
@@ -285,6 +299,7 @@
     <type fullname="System.ParamArrayAttribute" preserve="all" />
     <type fullname="System.Reflection.Assembly" preserve="all" />
     <type fullname="System.Reflection.AssemblyName" preserve="all" />
+    <type fullname="System.Reflection.DefaultMemberAttribute" preserve="all" />
     <type fullname="System.Reflection.MemberInfo" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />

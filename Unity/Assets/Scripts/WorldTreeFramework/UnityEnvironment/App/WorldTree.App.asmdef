@@ -1,0 +1,20 @@
+{
+    "name": "WorldTree.App",
+    "rootNamespace": "WorldTree",
+    "references": [
+        "WorldTree.CoreUnity",
+        "WorldTree.HotFix",
+        "WorldTree.ThirdParty"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "WorldTree.Core.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

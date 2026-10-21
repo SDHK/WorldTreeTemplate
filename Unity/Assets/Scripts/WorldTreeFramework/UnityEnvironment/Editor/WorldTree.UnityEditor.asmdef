@@ -6,7 +6,8 @@
         "HybridCLR.Editor",
         "YooAsset.Editor",
         "YooAsset",
-        "WorldTree.CoreUnity"
+        "WorldTree.CoreUnity",
+        "WorldTree.App"
     ],
     "includePlatforms": [
         "Editor"

@@ -259,11 +259,17 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Func<long,byte>
 	// System.Func<long,object,object>
 	// System.Func<long,object>
+	// System.Func<object,byte>
 	// System.Func<object,int>
 	// System.Func<object,long,long>
 	// System.Func<object,long>
 	// System.Func<object,object,object>
 	// System.Func<object,object>
+	// System.Linq.Buffer<object>
+	// System.Linq.Enumerable.Iterator<object>
+	// System.Linq.Enumerable.WhereArrayIterator<object>
+	// System.Linq.Enumerable.WhereEnumerableIterator<object>
+	// System.Linq.Enumerable.WhereListIterator<object>
 	// System.Nullable<int>
 	// System.Nullable<long>
 	// System.Predicate<UnityEngine.Vector2>
@@ -295,10 +301,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// WorldTree.CallRule<object,object,float,int,object>
 	// WorldTree.CallRuleAsync<object,object,object,object>
 	// WorldTree.ConcurrentList<object>
-	// WorldTree.Config<int>
-	// WorldTree.ConfigGroup<int,object>
 	// WorldTree.GenericOf<long,object>
-	// WorldTree.IBranch<int>
 	// WorldTree.IBranch<long>
 	// WorldTree.IBranch<object>
 	// WorldTree.ICallRule<float,int,object>
@@ -352,6 +355,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	{
 		// object System.Activator.CreateInstance<object>()
 		// object[] System.Array.Empty<object>()
+		// object[] System.Linq.Enumerable.ToArray<object>(System.Collections.Generic.IEnumerable<object>)
+		// System.Collections.Generic.IEnumerable<object> System.Linq.Enumerable.Where<object>(System.Collections.Generic.IEnumerable<object>,System.Func<object,bool>)
 		// bool System.Runtime.CompilerServices.RuntimeHelpers.IsReferenceOrContainsReferences<object>()
 		// object& System.Runtime.CompilerServices.Unsafe.AsRef<object>(object&)
 		// byte System.Runtime.CompilerServices.Unsafe.ReadUnaligned<byte>(byte&)
@@ -401,14 +406,12 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.DataBaseProxyRule.Insert<object>(WorldTree.DataBaseProxy,long,object)
 		// bool WorldTree.DataBaseProxyRule.Update<object>(WorldTree.DataBaseProxy,long,object)
 		// object WorldTree.DictionaryExtension.GetOrAdd<object,object>(System.Collections.Concurrent.ConcurrentDictionary<object,object>,object)
-		// object WorldTree.GenericBranchSupplement.AddGeneric<int,object,object>(object,int,object&)
 		// object WorldTree.GenericBranchSupplement.AddGeneric<long,object,object>(object,long,object&)
 		// object WorldTree.GenericBranchSupplement.AddGeneric<object,object,object>(object,object,object&)
 		// bool WorldTree.GenericBranchSupplement.TryGetGeneric<long,object,object>(object,long,object&)
 		// bool WorldTree.GenericBranchSupplement.TryGetGeneric<object,object,object>(object,object,object&)
 		// bool WorldTree.IBranch<object>.TryAddNode<object>(object,object)
 		// WorldTree.IDataCollection<object> WorldTree.IDataBase.GetCollection<object>()
-		// bool WorldTree.INode.TryAddSelfToTree<object,int>(int,WorldTree.INode)
 		// bool WorldTree.INode.TryAddSelfToTree<object,long>(long,WorldTree.INode)
 		// bool WorldTree.INode.TryAddSelfToTree<object,object>(object,WorldTree.INode)
 		// bool WorldTree.INode.TryGraftSelfToTree<object,long>(long,WorldTree.INode)
@@ -509,12 +512,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetTest.<InitializeYooAsset2>d__4>(WorldTree.YooAssetTest.<InitializeYooAsset2>d__4&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetTest.<InitializeYooAsset>d__2>(WorldTree.YooAssetTest.<InitializeYooAsset>d__2&)
 		// bool WorldTree.Node.TryGraftSelfToTree<object,object>(object,WorldTree.INode)
-		// object WorldTree.NodeBranchHelper.AddNode<object,object,int,object>(object,object,int,object&)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object,int>(object,object,long,object&,int)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object,object>(object,object,long,object&,object)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object>(object,object,long,object&)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,object,object>(object,object,object,object&)
-		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,int>(WorldTree.INode,object,int,WorldTree.INode)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long,int>(WorldTree.INode,object,long,WorldTree.INode,int)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long,object>(WorldTree.INode,object,long,WorldTree.INode,object)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long>(WorldTree.INode,object,long,WorldTree.INode)

@@ -1,5 +1,6 @@
 using CommandLine;
 using System;
+using System.IO;
 
 namespace WorldTree.Server
 {
@@ -23,7 +24,11 @@ namespace WorldTree.Server
             WorldTreeCore worldTree = new();
             worldTree.SetOptions(options);
             worldTree.SetLog<WorldLog>();
-            ConfigLoader.Load(worldTree);
+
+            // 读服务器配置
+            string bytesRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "ExcelTool", "Output", "Bytes", "s"));
+            ConfigLoader.Load<Tables>(worldTree, Path.Combine(bytesRoot, "GameConfig"));
+            ConfigLoader.Load<StartTables>(worldTree, Path.Combine(bytesRoot, options.ConfigPath));
             ConfigLoader.CreateWorldLines(worldTree);
 
             //防止程序集被优化掉
@@ -33,4 +38,3 @@ namespace WorldTree.Server
         }
     }
 }
-

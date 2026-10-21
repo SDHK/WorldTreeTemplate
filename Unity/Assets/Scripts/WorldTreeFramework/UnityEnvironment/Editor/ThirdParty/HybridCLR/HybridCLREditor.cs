@@ -1,3 +1,4 @@
+using HybridCLR.Editor;
 using HybridCLR.Editor.Commands;
 using HybridCLR.Editor.Settings;
 using System.IO;
@@ -15,7 +16,8 @@ public static class HybridCLREditor
 
 	public static void CopyHotUpdateDlls()
 	{
-		string externalHotUpdatePath = HybridCLRSettings.Instance.externalHotUpdateAssembliyDirs[0];
+		BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+		string externalHotUpdatePath = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target);
 		string toDir = "Assets/AssetBundles/Dlls/HotUpdateDlls";
 		if (Directory.Exists(toDir)) Directory.Delete(toDir, true);
 		Directory.CreateDirectory(toDir);

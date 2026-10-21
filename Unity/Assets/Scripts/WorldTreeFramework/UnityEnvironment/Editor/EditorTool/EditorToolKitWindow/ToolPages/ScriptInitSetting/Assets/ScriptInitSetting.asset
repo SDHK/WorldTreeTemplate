@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 60c2386b50841564d9997e56f34d778d, type: 3}
   m_Name: ScriptInitSetting
-  m_EditorClassIdentifier: Assembly-CSharp-Editor:EditorTool:ScriptInitSetting
+  m_EditorClassIdentifier: 
   IsOpen: 0
   IsInfo: 0
   Author: 

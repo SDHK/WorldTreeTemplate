@@ -30,15 +30,6 @@
             "BundleID": 0
         },
         {
-            "Address": "LiteDB.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/LiteDB.dll.bytes",
-            "AssetGUID": "",
-            "AssetTags": [
-                "aotDlls"
-            ],
-            "BundleID": 1
-        },
-        {
             "Address": "mscorlib.dll",
             "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/mscorlib.dll.bytes",
             "AssetGUID": "",
@@ -50,15 +41,6 @@
         {
             "Address": "System.Core.dll",
             "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/System.Core.dll.bytes",
-            "AssetGUID": "",
-            "AssetTags": [
-                "aotDlls"
-            ],
-            "BundleID": 1
-        },
-        {
-            "Address": "System.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/System.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "aotDlls"
@@ -84,6 +66,24 @@
             "BundleID": 1
         },
         {
+            "Address": "WorldTree.Core.dll",
+            "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/WorldTree.Core.dll.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "aotDlls"
+            ],
+            "BundleID": 1
+        },
+        {
+            "Address": "WorldTree.Module.dll",
+            "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/WorldTree.Module.dll.bytes",
+            "AssetGUID": "",
+            "AssetTags": [
+                "aotDlls"
+            ],
+            "BundleID": 1
+        },
+        {
             "Address": "YooAsset.dll",
             "AssetPath": "Assets/AssetBundles/Dlls/AotDlls/YooAsset.dll.bytes",
             "AssetGUID": "",
@@ -93,8 +93,8 @@
             "BundleID": 1
         },
         {
-            "Address": "WorldTree.Core.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Core.dll.bytes",
+            "Address": "WorldTree.App.dll",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.App.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -102,8 +102,8 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.Core.pdb",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Core.pdb.bytes",
+            "Address": "WorldTree.App.pdb",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.App.pdb.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -129,8 +129,8 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.Node.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Node.dll.bytes",
+            "Address": "WorldTree.HotFix.dll",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.HotFix.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -138,8 +138,8 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.Node.pdb",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Node.pdb.bytes",
+            "Address": "WorldTree.HotFix.pdb",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.HotFix.pdb.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -147,8 +147,8 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.NodeUnity.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.NodeUnity.dll.bytes",
+            "Address": "WorldTree.HotFixUnity.dll",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.HotFixUnity.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -156,8 +156,8 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.NodeUnity.pdb",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.NodeUnity.pdb.bytes",
+            "Address": "WorldTree.HotFixUnity.pdb",
+            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.HotFixUnity.pdb.bytes",
             "AssetGUID": "",
             "AssetTags": [
                 "hotUpdateDlls"
@@ -165,40 +165,13 @@
             "BundleID": 2
         },
         {
-            "Address": "WorldTree.Rule.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Rule.dll.bytes",
+            "Address": "worldlineconfig",
+            "AssetPath": "Assets/AssetBundles/Config/StartConfig/Client/worldlineconfig.bytes",
             "AssetGUID": "",
             "AssetTags": [
-                "hotUpdateDlls"
+                "config"
             ],
-            "BundleID": 2
-        },
-        {
-            "Address": "WorldTree.Rule.pdb",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.Rule.pdb.bytes",
-            "AssetGUID": "",
-            "AssetTags": [
-                "hotUpdateDlls"
-            ],
-            "BundleID": 2
-        },
-        {
-            "Address": "WorldTree.RuleUnity.dll",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.RuleUnity.dll.bytes",
-            "AssetGUID": "",
-            "AssetTags": [
-                "hotUpdateDlls"
-            ],
-            "BundleID": 2
-        },
-        {
-            "Address": "WorldTree.RuleUnity.pdb",
-            "AssetPath": "Assets/AssetBundles/Dlls/HotUpdateDlls/WorldTree.RuleUnity.pdb.bytes",
-            "AssetGUID": "",
-            "AssetTags": [
-                "hotUpdateDlls"
-            ],
-            "BundleID": 2
+            "BundleID": 3
         }
     ],
     "BundleList": [
@@ -217,7 +190,7 @@
             "UnityCRC": 0,
             "FileHash": "c550047831f32396e41e4e253801f6b3",
             "FileCRC": "00000000",
-            "FileSize": 5158400,
+            "FileSize": 4214784,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -227,7 +200,17 @@
             "UnityCRC": 0,
             "FileHash": "2c9878156c7190e3cfa8dcab64a9c23a",
             "FileCRC": "00000000",
-            "FileSize": 2236416,
+            "FileSize": 204108,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_assetbundles_config_startconfig_client.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f73239715ea2ebcc8699527508d861eb",
+            "FileCRC": "00000000",
+            "FileSize": 25,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

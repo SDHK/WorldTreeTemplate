@@ -57,7 +57,10 @@
     <Analyzer Include="D:\Projects\WorldTreeWorkspace\Project\_Template\Unity\Assets\Plugins\Unity.Analysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\HotUpdate\HotFix\Client\Config\CreateWorldConfig.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\HotFix\Generated\WorldLineConfig.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\HotFix\Generated\Tables.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\HotFix\Generated\StartTables.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\HotFix\Generated\WorldLineConfigData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\HotUpdate\HotFix\WorldTree.HotFix.asmdef" />
@@ -455,6 +458,10 @@
     <ProjectReference Include="WorldTree.CoreUnity.csproj">
       <Project>{CCAAEB54-E5BE-7998-5D51-E704B3DB0E9A}</Project>
       <Name>WorldTree.CoreUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="WorldTree.ThirdParty.csproj">
+      <Project>{C5FAFC16-CE1D-EEC6-56EE-8360746A0283}</Project>
+      <Name>WorldTree.ThirdParty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

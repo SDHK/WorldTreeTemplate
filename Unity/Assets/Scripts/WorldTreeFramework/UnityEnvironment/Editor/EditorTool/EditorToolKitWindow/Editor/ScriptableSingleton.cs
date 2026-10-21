@@ -19,7 +19,7 @@ namespace EditorTool
         {
             get
             {
-                //mInstance ??= LoadOrCreate();
+                mInstance ??= LoadOrCreate();
 
                 return mInstance;
             }
@@ -34,6 +34,7 @@ namespace EditorTool
                 if (!instance)
                 {
                     instance = CreateInstance<T>();
+                    mInstance = instance;
 
                     AssetDatabase.CreateAsset(instance, filePath);
 
