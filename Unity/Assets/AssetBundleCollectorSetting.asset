@@ -63,3 +63,16 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: Config
+      GroupDesc: 
+      AssetTags: config
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetBundles/Config
+        CollectorGUID: 1a5f7d8bc90a3a64e8eb5d610cfe9ced
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
