@@ -23,8 +23,8 @@ namespace WorldTree.Server
             WorldTreeCore worldTree = new();
             worldTree.SetOptions(options);
             worldTree.SetLog<WorldLog>();
-
-            var line = worldTree.Create(0, typeof(MainWorld), typeof(WorldHeart), 1000);
+            ConfigLoader.Load(worldTree);
+            ConfigLoader.CreateWorldLines(worldTree);
 
             //防止程序集被优化掉
             Type ruleType = typeof(MainWorldRule);
@@ -33,3 +33,4 @@ namespace WorldTree.Server
         }
     }
 }
+

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -36,6 +36,10 @@
   </PropertyGroup>
 
  
+  <ItemGroup>
+    <Compile Remove="ConfigLoader.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\WorldTreeFramework\Framework\Core\WorldTree.Core.csproj" />
     <ProjectReference Include="..\..\Analysis\Console.Analysis.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />

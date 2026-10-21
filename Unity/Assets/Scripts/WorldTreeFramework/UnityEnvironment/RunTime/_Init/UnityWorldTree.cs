@@ -1,4 +1,4 @@
-﻿/****************************************
+/****************************************
 
 * 作者：闪电黑客
 * 日期：2024/5/14 17:47
@@ -41,8 +41,8 @@ namespace WorldTree
 			WorldTreeCore = new();
 			WorldTreeCore.SetLog<UnityWorldLog>();
 
-			if (Define.IsEditor) WorldTreeCore.SetView(typeof(UnityViewBuilderWorld), typeof(UnityWorldHeart), typeof(UnityWorldTreeNodeViewBuilder));
-			WorldTreeCore.Create(0, typeof(MainWorld), typeof(UnityWorldHeart));
+			if (Define.IsEditor) WorldTreeCore.SetView(typeof(UnityViewBuilderWorld), typeof(WorldHeart), typeof(UnityWorldTreeNodeViewBuilder));
+			WorldTreeCore.Create(0, typeof(MainWorld), typeof(WorldHeart));
 		}
 
 

@@ -13,7 +13,7 @@ using Luban;
 namespace WorldTree
 {
     /// <summary>
-    /// 世界线配置
+    /// 客户端世界线
     /// </summary>
     public partial class WorldLineConfig
     {

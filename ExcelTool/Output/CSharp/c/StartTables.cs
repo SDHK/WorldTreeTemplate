@@ -14,7 +14,7 @@ namespace WorldTree
     public partial class StartTables
     {
         /// <summary>
-        /// 世界线配置
+        /// 客户端世界线
         /// </summary>
         public WorldLineConfig WorldLineConfig {get; }
 

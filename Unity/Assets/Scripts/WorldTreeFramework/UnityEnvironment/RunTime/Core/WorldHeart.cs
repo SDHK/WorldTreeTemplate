@@ -12,9 +12,9 @@ using UnityEngine;
 namespace WorldTree
 {
 	/// <summary>
-	/// 世界之心：Unity线程
+	/// 世界之心：Unity 主线程
 	/// </summary>
-	public class UnityWorldHeart : WorldHeartBase
+	public class WorldHeart : WorldHeartBase
 		, FieldOf<WorldLine>
 		, AsComponentBranch
 		, AsRule<Awake<int>>
@@ -126,11 +126,11 @@ namespace WorldTree
 		}
 	}
 
-	public static class WorldHeartUnityRule
+	public static class WorldHeartRule
 	{
-		private class AwakeRule : AwakeRule<UnityWorldHeart, int>
+		private class AwakeRule : AwakeRule<WorldHeart, int>
 		{
-			protected override void Execute(UnityWorldHeart self, int frameTime)
+			protected override void Execute(WorldHeart self, int frameTime)
 			{
 				self.frameTime = frameTime;
 
@@ -162,9 +162,9 @@ namespace WorldTree
 			}
 		}
 
-		private class RemoveRule : RemoveRule<UnityWorldHeart>
+		private class RemoveRule : RemoveRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self)
+			protected override void Execute(WorldHeart self)
 			{
 				if (self.thread != null) GameObject.Destroy(self.thread.gameObject);
 				self.thread = null;
@@ -190,9 +190,9 @@ namespace WorldTree
 			}
 		}
 
-		private class UpdateTimeRule : UpdateTimeRule<UnityWorldHeart>
+		private class UpdateTimeRule : UpdateTimeRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self, TimeSpan deltaTime)
+			protected override void Execute(WorldHeart self, TimeSpan deltaTime)
 			{
 				self.enable?.Send();
 				self.update?.Send();
@@ -201,36 +201,36 @@ namespace WorldTree
 			}
 		}
 
-		private class LateUpdateTimeRule : LateUpdateTimeRule<UnityWorldHeart>
+		private class LateUpdateTimeRule : LateUpdateTimeRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self, TimeSpan deltaTime)
+			protected override void Execute(WorldHeart self, TimeSpan deltaTime)
 			{
 				self.lateUpdate?.Send();
 				self.lateUpdateTime?.Send(deltaTime);
 			}
 		}
 
-		private class FixedUpdateTimeRule : FixedUpdateTimeRule<UnityWorldHeart>
+		private class FixedUpdateTimeRule : FixedUpdateTimeRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self, TimeSpan deltaTime)
+			protected override void Execute(WorldHeart self, TimeSpan deltaTime)
 			{
 				self.fixedUpdate?.Send();
 				self.fixedUpdateTime?.Send(deltaTime);
 			}
 		}
 
-		private class GuiUpdateTimeRule : GuiUpdateTimeRule<UnityWorldHeart>
+		private class GuiUpdateTimeRule : GuiUpdateTimeRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self, TimeSpan deltaTime)
+			protected override void Execute(WorldHeart self, TimeSpan deltaTime)
 			{
 				self.onGUI?.Send();
 				self.onGUIUpdateTime?.Send(deltaTime);
 			}
 		}
 
-		private class DrawGizmosUpdateTimeRule : DrawGizmosUpdateTimeRule<UnityWorldHeart>
+		private class DrawGizmosUpdateTimeRule : DrawGizmosUpdateTimeRule<WorldHeart>
 		{
-			protected override void Execute(UnityWorldHeart self, TimeSpan deltaTime)
+			protected override void Execute(WorldHeart self, TimeSpan deltaTime)
 			{
 				self.drawGizmos?.Send();
 				self.drawGizmosUpdateTime?.Send(deltaTime);

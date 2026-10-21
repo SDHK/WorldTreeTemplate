@@ -36,6 +36,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\App\ConfigLoader.cs" Link="ConfigLoader.cs" />
+    <Compile Include="..\..\..\ExcelTool\Output\CSharp\s\**\*.cs" Link="LubanConfig\%(RecursiveDir)%(Filename)%(Extension)" />
+    <Compile Include="..\..\..\ExcelTool\Luban\Runtime\**\*.cs" Link="LubanRuntime\%(RecursiveDir)%(Filename)%(Extension)" />
     <Compile Include="..\..\Unity\Assets\Scripts\HotUpdate\HotFix\Client\**\*.cs">
       <Link>Client\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>

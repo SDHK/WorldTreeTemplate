@@ -12,6 +12,9 @@ using Luban;
 
 namespace WorldTree
 {
+    /// <summary>
+    /// 客户端世界线
+    /// </summary>
     public sealed partial class WorldLineConfigData : Luban.BeanBase
     {
         public WorldLineConfigData(ByteBuf _buf) 

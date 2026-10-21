@@ -1,0 +1,3 @@
+# Luban 运行时和生成代码不走项目命名分析。
+[*.cs]
+generated_code = true
