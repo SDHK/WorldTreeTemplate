@@ -7,7 +7,6 @@
 
 */
 using System;
-using System.IO;
 using UnityEngine;
 
 namespace WorldTree
@@ -45,11 +44,8 @@ namespace WorldTree
 
 			if (Define.IsEditor) WorldTreeCore.SetView(typeof(UnityViewBuilderWorld), typeof(WorldHeart), typeof(UnityWorldTreeNodeViewBuilder));
 
-			// 读配置：编辑器直读工程外
-			string bytesRoot = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "ExcelTool", "Output", "Bytes", "c"));
-			ConfigLoader.Load<Tables>(WorldTreeCore, Path.Combine(bytesRoot, "GameConfig"));
-			ConfigLoader.Load<StartTables>(WorldTreeCore, Path.Combine(bytesRoot, "StartConfig", "Client"));
-			ConfigLoader.CreateWorldLines(WorldTreeCore);
+			// 线 0 启动世界线（StartWorld 的 Add 规则读配置 + 建线）
+			WorldTreeCore.Create(0, typeof(StartWorld), typeof(WorldHeart), 0);
 		}
 
 

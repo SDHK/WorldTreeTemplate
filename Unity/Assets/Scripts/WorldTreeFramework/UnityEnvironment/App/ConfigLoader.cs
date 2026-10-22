@@ -11,6 +11,7 @@ using Luban;
 using System;
 using System.IO;
 using System.Linq;
+using UnityEngine;
 
 namespace WorldTree
 {
@@ -26,9 +27,18 @@ namespace WorldTree
 		{
 			Func<string, ByteBuf> loader = name =>
 			{
-				string file = Path.Combine(path, name + ".bytes");
-				if (!File.Exists(file)) throw new FileNotFoundException($"找不到配置: {file}");
-				return new ByteBuf(File.ReadAllBytes(file));
+				if (Define.IsEditor)
+				{
+					string file = Path.Combine(path, name + ".bytes");
+					if (!File.Exists(file)) throw new FileNotFoundException($"找不到配置: {file}");
+					return new ByteBuf(File.ReadAllBytes(file));
+				}
+				else
+				{
+					core.MainLine.TryGetComponent(out YooAssetManager manager);
+					TextAsset textAsset = manager.LoadAsset<TextAsset>(name);
+					return new ByteBuf(textAsset.bytes);
+				}
 			};
 			core.ConfigManager.Add((T)Activator.CreateInstance(typeof(T), loader));
 		}
@@ -43,6 +53,7 @@ namespace WorldTree
 			foreach (WorldLineConfigData row in startTables.WorldLineConfig.DataList)
 			{
 				if (row.Process != core.Options.Process) continue;
+				if (row.LineId == 0) throw new Exception("起服表不能写线 0（线 0 由启动流程创建）");
 				CreateWorldLine(core, row);
 			}
 		}

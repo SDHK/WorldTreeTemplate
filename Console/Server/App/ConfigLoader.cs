@@ -34,6 +34,7 @@ namespace WorldTree.Server
             foreach (WorldLineConfigData row in startTables.WorldLineConfig.DataList)
             {
                 if (row.Process != core.Options.Process) continue;
+                if (row.LineId == 0) throw new Exception("起服表不能写线 0（线 0 由启动流程创建）");
                 CreateWorldLine(core, row);
             }
         }

@@ -1,6 +1,5 @@
 using CommandLine;
 using System;
-using System.IO;
 
 namespace WorldTree.Server
 {
@@ -25,11 +24,8 @@ namespace WorldTree.Server
             worldTree.SetOptions(options);
             worldTree.SetLog<WorldLog>();
 
-            // 读服务器配置
-            string bytesRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "ExcelTool", "Output", "Bytes", "s"));
-            ConfigLoader.Load<Tables>(worldTree, Path.Combine(bytesRoot, "GameConfig"));
-            ConfigLoader.Load<StartTables>(worldTree, Path.Combine(bytesRoot, options.ConfigPath));
-            ConfigLoader.CreateWorldLines(worldTree);
+            // 线 0 启动世界线（StartWorld 的 Add 规则读配置 + 建线）
+            worldTree.Create(0, typeof(StartWorld), typeof(WorldHeart), 1000);
 
             //防止程序集被优化掉
             Type ruleType = typeof(MainWorldRule);

@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\WorldTreeFramework\UnityEnvironment\App\ConfigLoader.cs" />
+    <Compile Include="Assets\Scripts\WorldTreeFramework\UnityEnvironment\App\StartWorldRule.cs" />
     <Compile Include="Assets\Scripts\WorldTreeFramework\UnityEnvironment\App\UnityWorldTree.cs" />
   </ItemGroup>
   <ItemGroup>

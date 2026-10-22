@@ -1,7 +1,9 @@
 {
     "name": "WorldTree.CoreUnity",
     "rootNamespace": "WorldTree",
-    "references": [],
+    "references": [
+        "YooAsset"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

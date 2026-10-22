@@ -25,7 +25,7 @@ namespace EditorTool
 		private const string StartBytesSrc = "Output/Bytes/c/StartConfig/Client";
 
 		// 目标目录（相对 Assets 根）
-		private const string RuntimeDst = "Scripts/ThirdParty";
+		private const string RuntimeDst = "Scripts/ThirdParty/Luban";
 		private const string CSharpDst = "Scripts/HotUpdate/HotFix/Generated";
 		private const string GameBytesDst = "AssetBundles/Config/GameConfig";
 		private const string StartBytesDst = "AssetBundles/Config/StartConfig/Client";

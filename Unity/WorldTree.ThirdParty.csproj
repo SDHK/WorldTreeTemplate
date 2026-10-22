@@ -57,8 +57,8 @@
     <Analyzer Include="D:\Projects\WorldTreeWorkspace\Project\_Template\Unity\Assets\Plugins\Unity.Analysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ThirdParty\Luban\BeanBase.cs" />
     <Compile Include="Assets\Scripts\ThirdParty\Luban\ByteBuf.cs" />
+    <Compile Include="Assets\Scripts\ThirdParty\Luban\BeanBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\ThirdParty\WorldTree.ThirdParty.asmdef" />

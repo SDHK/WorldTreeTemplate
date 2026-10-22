@@ -6,9 +6,6 @@ using System.Text;
 
 namespace Luban
 {
-    /// <summary>
-    /// 反序列化错误码
-    /// </summary>
     public enum EDeserializeError
     {
         OK,
