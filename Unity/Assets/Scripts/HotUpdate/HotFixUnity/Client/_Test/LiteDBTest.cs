@@ -9,9 +9,9 @@
 namespace WorldTree
 {
 	/// <summary>
-	/// 数据库代理
+	/// 数据库
 	/// </summary>
-	public class DataBaseTestProxy : DataBaseProxy
+	public class DataBaseTest : DataBaseManager
 		, AsRule<Awake>
 	{
 

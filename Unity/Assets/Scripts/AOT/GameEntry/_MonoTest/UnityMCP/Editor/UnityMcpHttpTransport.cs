@@ -72,25 +72,44 @@ namespace UnityMCP.Editor
 		private static volatile bool running;
 
 		/// <summary>
+		/// 绑定失败后的重试次数（每次间隔 500ms）。域重载后旧监听要一点时间才释放。
+		/// </summary>
+		private const int BindRetryCount = 10;
+
+		/// <summary>
 		/// 是否在监听
 		/// </summary>
 		public static bool IsRunning { get { return running; } }
 
 		/// <summary>
-		/// 绑定端口并开始接收；失败返回 false（内部重试 3 次）
+		/// 绑定端口并开始接收；失败返回 false（内部重试）
 		/// </summary>
 		public static bool Start(Handler h)
 		{
 			if (running) return true;
 			handler = h;
 
-			for (int attempt = 1; attempt <= 3 && !running; attempt++)
+			// 同一个域里如果还残留旧监听，先关掉，避免自己和自己抢端口
+			TcpListener stale = listener;
+			listener = null;
+			if (stale != null)
 			{
+				try { stale.Stop(); } catch (Exception) { }
+			}
+
+			Exception lastError = null;
+			for (int attempt = 1; attempt <= BindRetryCount && !running; attempt++)
+			{
+				TcpListener l = null;
 				try
 				{
-					TcpListener l = new TcpListener(IPAddress.Loopback, Port);
-					l.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+					l = new TcpListener(IPAddress.Loopback, Port);
+					// Windows 上 SO_REUSEADDR 会让新监听"抢"到旧监听的端口，两个 socket 同时 LISTENING，
+					// 连接可能落到已经退出的 accept 循环上，表现为端口在听但请求永不回包。
+					// 用 SO_EXCLUSIVEADDRUSE：第二个 bind 直接失败，宁可报错也不静默叠加。
+					try { l.Server.ExclusiveAddressUse = true; } catch (Exception) { }
 					l.Start();
+
 					listener = l;
 					running = true;
 					acceptThread = new Thread(AcceptLoop) { IsBackground = true, Name = "UnityMcpHttp" };
@@ -98,9 +117,17 @@ namespace UnityMCP.Editor
 				}
 				catch (Exception e)
 				{
-					UnityEngine.Debug.LogWarning($"[UnityMcp] 第 {attempt} 次绑定端口 {Port} 失败: {e.Message}");
+					lastError = e;
+					try { if (l != null) l.Stop(); } catch (Exception) { }
 					Thread.Sleep(500);
 				}
+			}
+
+			if (!running)
+			{
+				UnityEngine.Debug.LogError($"[UnityMcp] 端口 {Port} 绑定失败（重试 {BindRetryCount} 次）: "
+					+ (lastError != null ? lastError.Message : "未知错误")
+					+ "。若刚发生域重载，旧监听可能还没释放；重启 Unity 进程可立即释放。");
 			}
 			return running;
 		}
@@ -110,23 +137,39 @@ namespace UnityMCP.Editor
 		/// </summary>
 		public static void Stop()
 		{
-			if (!running) return;
+			TcpListener l = listener;
+			if (!running && l == null) return;
+
 			running = false;
-			try { if (listener != null) listener.Stop(); } catch (Exception) { }
 			listener = null;
 			handler = null;
+
+			try { if (l != null) l.Stop(); } catch (Exception) { }
+
+			// 等 accept 循环真正退出，保证 socket 在域卸载前已经关闭，
+			// 否则下一次 Start 会和这个还没释放的监听抢端口。
+			Thread t = acceptThread;
+			acceptThread = null;
+			if (t != null && t != Thread.CurrentThread)
+			{
+				try { t.Join(1000); } catch (Exception) { }
+			}
 		}
 
 		#region 接收
 
 		private static void AcceptLoop()
 		{
+			// 捕获局部引用：Stop 会把 listener 置空
+			TcpListener l = listener;
+			if (l == null) return;
+
 			while (running)
 			{
 				TcpClient client;
 				try
 				{
-					client = listener.AcceptTcpClient();
+					client = l.AcceptTcpClient();
 				}
 				catch (Exception)
 				{

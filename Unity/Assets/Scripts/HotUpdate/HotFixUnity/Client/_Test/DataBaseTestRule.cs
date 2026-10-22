@@ -6,16 +6,18 @@
 * 描述：
 
 */
+using System.IO;
+
 namespace WorldTree
 {
-	public static class DataBaseTestProxyRule
+	public static class DataBaseTestRule
 	{
-		private class AwakeRule : AwakeRule<DataBaseTestProxy>
+		private class AwakeRule : AwakeRule<DataBaseTest>
 		{
-			protected override void Execute(DataBaseTestProxy self)
+			protected override void Execute(DataBaseTest self)
 			{
-				string path = "C:\\Users\\admin\\Desktop\\新建文件夹\\LiteDBTest.db";
-				self.DataBase = self.AddComponent(out LiteDBManager _, path);
+				string path = Path.Combine(UnityEngine.Application.persistentDataPath, "LiteDBTest.db");
+				self.AddDataSource<LiteDBManager>(path);
 			}
 		}
 	}
@@ -28,7 +30,7 @@ namespace WorldTree
 			protected override void Execute(LiteDBTest self)
 			{
 				//获取数据库代理
-				self.World.AddComponent(out DataBaseTestProxy dataBaseProxy);
+				self.World.AddComponent(out DataBaseTest dataBaseProxy);
 
 				long id;
 

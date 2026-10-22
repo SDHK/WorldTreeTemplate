@@ -35,8 +35,7 @@ namespace WorldTree
 				}
 				else
 				{
-					core.MainLine.TryGetComponent(out YooAssetManager manager);
-					TextAsset textAsset = manager.LoadAsset<TextAsset>(name);
+					TextAsset textAsset = core.MainLine.GetAssetManager().LoadAsset<TextAsset>(name);
 					return new ByteBuf(textAsset.bytes);
 				}
 			};

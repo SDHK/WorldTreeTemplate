@@ -47,7 +47,7 @@ namespace UnityMCP.Editor
 		/// <summary>
 		/// 服务器版本
 		/// </summary>
-		public const string ServerVersion = "0.2.0";
+		public const string ServerVersion = "0.2.1";
 
 		/// <summary>
 		/// 单个请求等待主线程执行的上限（秒）
@@ -72,6 +72,7 @@ namespace UnityMCP.Editor
 		{
 			UnityMcpLogBuffer.Install();
 			AssemblyReloadEvents.beforeAssemblyReload += Stop;
+			EditorApplication.quitting += Stop;
 			EditorApplication.update += Drain;
 			EditorApplication.delayCall += Start;
 		}

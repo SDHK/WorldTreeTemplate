@@ -54,7 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="D:\1Make\Code\VisualStudio\2026\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\Projects\WorldTreeWorkspace\Project\_Template\Unity\Assets\Plugins\Unity.Analysis.dll" />
+    <Analyzer Include="D:\Projects\WorldTreeWorkspace\Project\_Template\Unity\Assets\Scripts\AOT\Plugins\Unity.Analysis.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ThirdParty\Luban\ByteBuf.cs" />
@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="WorldTree.Core">
-      <HintPath>Assets\Plugins\WorldTree\WorldTree.Core.dll</HintPath>
+      <HintPath>Assets\Scripts\AOT\Plugins\WorldTree\WorldTree.Core.dll</HintPath>
     </Reference>
     <Reference Include="LZ4">
       <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@6ffb977ef3\Plugins\LZ4.dll</HintPath>
@@ -77,7 +77,7 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine">
-      <HintPath>Assets\Plugins\CommandLine.dll</HintPath>
+      <HintPath>Assets\Scripts\AOT\Plugins\CommandLine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
@@ -89,7 +89,7 @@
       <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@6ffb977ef3\Plugins\dnlib.dll</HintPath>
     </Reference>
     <Reference Include="NLog">
-      <HintPath>Assets\Plugins\NLog.dll</HintPath>
+      <HintPath>Assets\Scripts\AOT\Plugins\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization.Config">
       <HintPath>Assets\Scripts\AOT\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.dll</HintPath>
@@ -113,7 +113,7 @@
       <HintPath>Assets\Scripts\AOT\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
     </Reference>
     <Reference Include="WorldTree.Module">
-      <HintPath>Assets\Plugins\WorldTree\WorldTree.Module.dll</HintPath>
+      <HintPath>Assets\Scripts\AOT\Plugins\WorldTree\WorldTree.Module.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
@@ -140,7 +140,7 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>Assets\Plugins\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>Assets\Scripts\AOT\Plugins\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>Assets\Scripts\AOT\Plugins\Sqlite\Mono.Data.Sqlite.dll</HintPath>

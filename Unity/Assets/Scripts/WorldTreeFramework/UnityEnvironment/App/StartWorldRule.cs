@@ -22,8 +22,8 @@ namespace WorldTree
 				self.Log("启动世界：读配置 + 创建世界线");
 				WorldTreeCore core = self.Line.Core;
 
-				// 运行时挂 YooAssetManager（编辑器直读文件，不需要）
-				if (!Define.IsEditor) self.Line.AddComponent(out YooAssetManager _);
+				// 挂资源管理器，并装上 YooAsset 来源
+				self.Line.GetAssetManager().AddAssetSource<YooAssetManager>();
 
 				// 读配置：编辑器直读工程外
 				string bytesRoot = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "ExcelTool", "Output", "Bytes", "c"));
