@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\AOT\GameEntry\_MonoTest\ECS\MailTest.cs" />
     <Compile Include="Assets\Scripts\AOT\GameEntry\_MonoTest\VirtualMachine\CodeTokenizer.cs" />
     <Compile Include="Assets\Scripts\AOT\GameEntry\GamePlayMode.cs" />
+    <Compile Include="Assets\Scripts\AOT\GameEntry\DebuggerGG.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\AOT\GameEntry\GameEntry.asmdef" />
@@ -827,11 +828,11 @@
     <Reference Include="YooAsset.Editor">
       <HintPath>Library\ScriptAssemblies\YooAsset.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

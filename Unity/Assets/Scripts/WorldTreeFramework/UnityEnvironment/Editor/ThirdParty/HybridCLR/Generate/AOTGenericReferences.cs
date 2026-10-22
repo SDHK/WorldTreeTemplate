@@ -579,6 +579,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.TreeValueBaseRule.Bind<float,object>(WorldTree.TreeValueBase<float>,WorldTree.TreeValueBase<object>)
 		// bool WorldTree.ViewLayerRule.TryAddView<object>(WorldTree.ViewLayer,object&)
 		// WorldTree.RuleBroadcast<object> WorldTree.WorldTreeCoreExtension.GetRuleBroadcast<object>(WorldTree.World,WorldTree.RuleBroadcast<object>&)
+		// object YooAsset.AssetHandle.GetAssetObject<object>()
 		// YooAsset.AssetHandle YooAsset.ResourcePackage.LoadAssetAsync<object>(string,uint)
+		// YooAsset.AssetHandle YooAsset.ResourcePackage.LoadAssetSync<object>(string)
 	}
 }

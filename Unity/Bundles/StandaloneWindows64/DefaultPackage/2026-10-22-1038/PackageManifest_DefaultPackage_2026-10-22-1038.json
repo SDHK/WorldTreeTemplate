@@ -6,7 +6,7 @@
     "OutputNameStyle": 0,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "Simulate",
+    "PackageVersion": "2026-10-22-1038",
     "AssetList": [
         {
             "Address": "MainWindow",
@@ -177,42 +177,48 @@
     "BundleList": [
         {
             "BundleName": "assets_assetbundles_assets_ui.bundle",
-            "UnityCRC": 0,
-            "FileHash": "c69f0bd9fb292706fa54445796a4805a",
-            "FileCRC": "00000000",
-            "FileSize": 59629,
+            "UnityCRC": 3302815145,
+            "FileHash": "4ab2234e5c992e922bc3b44f3eda75f7",
+            "FileCRC": "dbe7155f",
+            "FileSize": 12955,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
         },
         {
             "BundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "UnityCRC": 0,
-            "FileHash": "c550047831f32396e41e4e253801f6b3",
-            "FileCRC": "00000000",
-            "FileSize": 4214784,
+            "UnityCRC": 53468784,
+            "FileHash": "301e94145f1de893173aabae168ae2c5",
+            "FileCRC": "e1c7546f",
+            "FileSize": 1999855,
             "Encrypted": false,
-            "Tags": [],
+            "Tags": [
+                "aotDlls"
+            ],
             "DependIDs": []
         },
         {
             "BundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "UnityCRC": 0,
-            "FileHash": "2c9878156c7190e3cfa8dcab64a9c23a",
-            "FileCRC": "00000000",
-            "FileSize": 204108,
+            "UnityCRC": 972863821,
+            "FileHash": "64a38892931e5653cdb96bdc72c86a68",
+            "FileCRC": "34b2bb4b",
+            "FileSize": 115560,
             "Encrypted": false,
-            "Tags": [],
+            "Tags": [
+                "hotUpdateDlls"
+            ],
             "DependIDs": []
         },
         {
             "BundleName": "assets_assetbundles_config_startconfig_client.bundle",
-            "UnityCRC": 0,
-            "FileHash": "f73239715ea2ebcc8699527508d861eb",
-            "FileCRC": "00000000",
-            "FileSize": 1,
+            "UnityCRC": 2471718965,
+            "FileHash": "58531723a1099bf4e5b986589ca6853b",
+            "FileCRC": "8e5f7536",
+            "FileSize": 1252,
             "Encrypted": false,
-            "Tags": [],
+            "Tags": [
+                "config"
+            ],
             "DependIDs": []
         }
     ]

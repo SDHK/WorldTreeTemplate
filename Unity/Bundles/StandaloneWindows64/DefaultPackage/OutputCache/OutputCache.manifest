@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 781026584
+CRC: 2457282345
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -10,4 +10,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_2:
       Name: assets_assetbundles_dlls_hotupdatedlls.bundle
+      Dependencies: {}
+    Info_3:
+      Name: assets_assetbundles_config_startconfig_client.bundle
       Dependencies: {}

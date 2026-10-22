@@ -24,6 +24,7 @@
     <type fullname="UnityEngine.Random" preserve="all" />
     <type fullname="UnityEngine.Rect" preserve="all" />
     <type fullname="UnityEngine.RectOffset" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
     <type fullname="UnityEngine.TextureFormat" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />
@@ -151,6 +152,7 @@
     <type fullname="WorldTree.SendRule`2" preserve="all" />
     <type fullname="WorldTree.SendRule`3" preserve="all" />
     <type fullname="WorldTree.SerializedTypeMode" preserve="all" />
+    <type fullname="WorldTree.StartWorld" preserve="all" />
     <type fullname="WorldTree.StepAssemblyData" preserve="all" />
     <type fullname="WorldTree.StepMachine" preserve="all" />
     <type fullname="WorldTree.StepMachineAssembler" preserve="all" />
@@ -259,6 +261,7 @@
     <type fullname="YooAsset.InitializeParameters" preserve="all" />
     <type fullname="YooAsset.OfflinePlayModeParameters" preserve="all" />
     <type fullname="YooAsset.ResourcePackage" preserve="all" />
+    <type fullname="YooAsset.YooAssets" preserve="all" />
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action" preserve="all" />
@@ -270,6 +273,8 @@
     <type fullname="System.Boolean" preserve="all" />
     <type fullname="System.Byte" preserve="all" />
     <type fullname="System.Collections.Generic.Dictionary`2" preserve="all" />
+    <type fullname="System.Collections.Generic.Dictionary`2/ValueCollection" preserve="all" />
+    <type fullname="System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerable`1" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerator`1" preserve="all" />
     <type fullname="System.Collections.Generic.IReadOnlyDictionary`2" preserve="all" />
