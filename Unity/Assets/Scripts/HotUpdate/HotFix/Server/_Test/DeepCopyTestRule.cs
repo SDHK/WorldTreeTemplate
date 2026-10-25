@@ -3,7 +3,7 @@ namespace WorldTree.Server
 
 	public static partial class DeepCopyTestRule
 	{
-		[NodeRule(nameof(AddRule<DeepCopyTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(this DeepCopyTest self)
 		{
 			CopyTest copySource = new CopyTest();

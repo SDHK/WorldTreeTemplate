@@ -26,13 +26,13 @@ namespace WorldTree
 	, AsRule<InputTestEvent>
 	{
 
-		[NodeRule(nameof(InputTestEventRule<InputMapperTest>))]
+		[NodeRule(nameof(InputTestEvent))]
 		private static void OnInputTestEventRule(InputMapperTest self, InputData data)
 		{
 			self.Log($"InputTest:{data.Info.InputCode} !!!!!!!!!!!");
 		}
 
-		[NodeRule(nameof(UpdateRule<InputMapperTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(InputMapperTest self)
 		{
 		}
@@ -40,7 +40,7 @@ namespace WorldTree
 		/// <summary>
 		/// 序列化流程
 		/// </summary>
-		[NodeRule(nameof(AwakeRule<InputMapperTest>))]
+		[NodeRule(nameof(Awake))]
 		private static void OnAwakeRule(InputMapperTest self)
 		{
 			//新建一个输入映射管理器
@@ -82,7 +82,7 @@ namespace WorldTree
 		/// <summary>
 		/// 反序列化流程
 		/// </summary>
-		//[NodeRule(nameof(AwakeRule<InputMapperTest>))]
+		//[NodeRule(nameof(Awake))]
 		private static void OnAwake2(InputMapperTest self)
 		{
 

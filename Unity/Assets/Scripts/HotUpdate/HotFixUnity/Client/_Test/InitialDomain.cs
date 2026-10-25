@@ -8,7 +8,6 @@
 */
 using System;
 using UnityEngine;
-using WorldTree.Server;
 
 namespace WorldTree
 {
@@ -126,7 +125,7 @@ namespace WorldTree
 		/// </summary>
 		public TreeDictionary<int, int> ValueDict;
 
-		[NodeRule(nameof(AwakeRule<InitialDomain>))]
+		[NodeRule(nameof(Awake))]
 		private static void OnAwakeRule(InitialDomain self)
 		{
 			self.TestFloat = 1;
@@ -134,13 +133,13 @@ namespace WorldTree
 			self.Log($"初始域唤醒123！！!");
 		}
 
-		[NodeRule(nameof(AddRule<InitialDomain>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(InitialDomain self)
 		{
 			self.Log($"初始域热更部分！！!");
 
 			// TreeTask 异步任务测试，启动后自己跑完并打日志
-			self.AddComponent(out TreeTaskTest _);
+			//self.AddComponent(out TreeTaskTest _);
 
 			//self.TypeToCode<InputDeviceManager>();
 			//self.World.AddComponent(out InputDeviceManager _);
@@ -152,10 +151,10 @@ namespace WorldTree
 			//PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone, currentDefines);
 			//self.AddComponent(out CascadeTickerTest _);
 			//self.AddComponent(out StepMachineTest _);
-			//self.AddComponent(out ViewTest _);
+			self.AddComponent(out ViewTest _);
 		}
 
-		[NodeRule(nameof(UpdateRule<InitialDomain>))]
+		[NodeRule(nameof(Update))]
 
 		private static void OnUpdateRule(InitialDomain self)
 		{
@@ -184,24 +183,24 @@ namespace WorldTree
 			}
 		}
 
-		[NodeRule(nameof(TestEventRule<InitialDomain>))]
+		[NodeRule(nameof(TestEvent))]
 		private static string OnTestEventRule(InitialDomain self, float arg1, int arg2)
 		{
 			return "返回字符串";
 		}
 
-		[NodeRule(nameof(RemoveRule<InitialDomain>))]
+		[NodeRule(nameof(Remove))]
 		private static void OnRemoveRule(InitialDomain self)
 		{
 			self.Log($"初始域关闭！！");
 		}
 
-		[NodeRule(nameof(EnableRule<InitialDomain>))]
+		[NodeRule(nameof(Enable))]
 		private static void OnEnableRule(InitialDomain self)
 		{
 			self.Log($"初始域激活！！");
 		}
-		[NodeRule(nameof(DisableRule<InitialDomain>))]
+		[NodeRule(nameof(Disable))]
 		private static void OnDisableRule(InitialDomain self)
 		{
 
@@ -209,7 +208,7 @@ namespace WorldTree
 		}
 
 
-		[NodeRule(nameof(GuiUpdateRule<InitialDomain>))]
+		[NodeRule(nameof(GuiUpdate))]
 		private static void OnGuiUpdateRule(InitialDomain self)
 		{
 			//self.Log($"测试OnGuiUpdateRule！！!");
@@ -217,7 +216,7 @@ namespace WorldTree
 			//GUILayout.Label($@"    {timeSpan.TotalMilliseconds} !  ", new GUIStyle() { fontSize = 60 });
 		}
 
-		[NodeRule(nameof(GuiUpdateTimeRule<InitialDomain>))]
+		[NodeRule(nameof(GuiUpdateTime))]
 		//[RuleSwitch1(nameof(self))]
 		public static void OnGuiUpdateTimeRule(InitialDomain self, TimeSpan timeSpan)
 		{
@@ -225,7 +224,6 @@ namespace WorldTree
 
 			GUILayout.Label($@"    {timeSpan.Ticks} !  ", new GUIStyle() { fontSize = 60 });
 		}
-
 
 	}
 }

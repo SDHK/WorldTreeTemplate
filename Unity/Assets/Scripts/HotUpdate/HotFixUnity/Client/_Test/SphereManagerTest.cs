@@ -40,7 +40,7 @@ namespace WorldTree
 		public GameObject balls;
 
 
-		[NodeRule(nameof(UpdateRule<SphereManagerTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(SphereManagerTest self)
 		{
 			if (Input.GetKeyDown(KeyCode.Q))

@@ -28,7 +28,7 @@ namespace WorldTree
 		/// </summary>
 		public TreeTaskToken treeTaskToken;
 
-		[NodeRule(nameof(UpdateRule<TaskTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(TaskTest self)
 		{
 			if (Input.GetKeyDown(KeyCode.Q))

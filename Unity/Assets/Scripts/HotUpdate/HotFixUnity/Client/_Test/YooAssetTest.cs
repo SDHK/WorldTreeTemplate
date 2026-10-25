@@ -48,7 +48,7 @@ namespace WorldTree
 		/// 资源包
 		/// </summary>
 		public ResourcePackage package;
-		[NodeRule(nameof(AddRule<YooAssetTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(YooAssetTest self)
 		{
 			//// 初始化资源系统

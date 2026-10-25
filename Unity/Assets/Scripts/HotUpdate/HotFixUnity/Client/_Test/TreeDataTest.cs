@@ -27,7 +27,7 @@ namespace WorldTree
 		/// </summary>
 		public TreeDataNodeDataTest1 treeData;
 
-		[NodeRule(nameof(UpdateRule<TreeDataTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(TreeDataTest self)
 		{
 			//self.Log($"初始域更新！！!");
@@ -159,7 +159,7 @@ namespace WorldTree
 		/// </summary>
 		public NodeRef<TreeDataNodeDataTest2> NodeRef;
 
-		[NodeRule(nameof(UpdateRule<TreeDataNodeDataTest1>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(TreeDataNodeDataTest1 self)
 		{
 			self.Log($"测试数据更新1！！!{self.Name}:{self.Age}");
@@ -184,7 +184,7 @@ namespace WorldTree
 		/// </summary>
 		public int Age;
 
-		[NodeRule(nameof(UpdateRule<TreeDataNodeDataTest2>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(TreeDataNodeDataTest2 self)
 		{
 			self.Log($"测试数据更新2！！!{self.Name}:{self.Age}");

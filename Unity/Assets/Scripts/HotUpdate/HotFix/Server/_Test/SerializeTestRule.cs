@@ -34,7 +34,7 @@ namespace WorldTree.Server
 
 	public static partial class SerializeTestRule
 	{
-		[NodeRule(nameof(AddRule<SerializeTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(this SerializeTest self)
 		{
 			self.Log($"嵌套序列化测试！！！！！");

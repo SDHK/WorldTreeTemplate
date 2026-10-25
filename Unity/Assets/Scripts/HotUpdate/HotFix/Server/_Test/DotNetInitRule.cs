@@ -20,7 +20,7 @@ namespace WorldTree.Server
 
 	public static partial class DotNetInitRule
 	{
-		[NodeRule(nameof(AddRule<DotNetInit>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(this DotNetInit self)
 		{
 			self.Log($"启动！！");
@@ -41,7 +41,7 @@ namespace WorldTree.Server
 			self.Log(NodeRule.ToStringDrawTree(self));
 		}
 
-		[NodeRule(nameof(EnableRule<DotNetInit>))]
+		[NodeRule(nameof(Enable))]
 		private static void OnEnableRule(this DotNetInit self)
 		{
 			self.Log($"激活！！");
@@ -64,19 +64,19 @@ namespace WorldTree.Server
 		=> NodeBranchHelper.AddNode<N, ComponentBranch, long, T>(self, default(ComponentBranch), self.TypeToCode<T>(), out node);
 
 
-		[NodeRule(nameof(UpdateTimeRule<DotNetInit>))]
+		[NodeRule(nameof(UpdateTime))]
 		private static void OnUpdateTimeRule(this DotNetInit self, TimeSpan timeSpan)
 		{
 			//self.Log($"初始更新！！！{timeSpan.TotalSeconds}");
 		}
 
-		[NodeRule(nameof(DisableRule<DotNetInit>))]
+		[NodeRule(nameof(Disable))]
 		private static void OnDisableRule(this DotNetInit self)
 		{
 			self.Log("失活！！");
 		}
 
-		[NodeRule(nameof(RemoveRule<DotNetInit>))]
+		[NodeRule(nameof(Remove))]
 		private static void OnRemoveRule(this DotNetInit self)
 		{
 			self.Log($"初始关闭！！");
@@ -200,14 +200,14 @@ namespace WorldTree.Server
 		/// <summary>
 		/// 按钮方法
 		/// </summary>
-		[NodeRule(nameof(TestNodeEventRule<Test<T>, Type>), true)]
+		[NodeRule(nameof(TestNodeEvent<Type>), true)]
 		[RuleSwitch(nameof(OnTestNodeEventRule), nameof(self.ConfigId), 1)]
 		static void OnTestNodeEventRule<T>(this Test<T> self, TestEnum id, Type io, List<int> arg3)
 		{
 		}
 
 
-		[NodeRule(nameof(TestNodeEventRule<Test<T>, Type>))]
+		[NodeRule(nameof(TestNodeEvent<Type>))]
 		[RuleSwitch(nameof(OnTestNodeEventRule), nameof(self.ConfigId), 2)]
 		static void OnTestNodeEvent2Rule<T>(this Test<T> self, TestEnum id, Type io, List<int> arg3)
 		{

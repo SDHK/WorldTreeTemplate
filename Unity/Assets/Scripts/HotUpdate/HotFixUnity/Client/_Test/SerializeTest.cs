@@ -139,7 +139,7 @@ namespace WorldTree
 
 
 
-		[NodeRule(nameof(AddRule<SerializeTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(SerializeTest self)
 		{
 			self.Log($"序列化测试！！！！！");

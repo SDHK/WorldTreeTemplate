@@ -39,7 +39,7 @@ namespace WorldTree
 		/// </summary>
 		public float Velocity;
 
-		[NodeRule(nameof(UpdateTimeRule<SphereTest>))]
+		[NodeRule(nameof(UpdateTime))]
 		private static void OnUpdateTimeRule(SphereTest self, TimeSpan deltaTime)
 		{
 			if (self.Delay > 0)

@@ -18,7 +18,7 @@ namespace WorldTree.Server
 	/// </summary>
 	public static partial class TreeTaskTestRule
 	{
-		[NodeRule(nameof(AddRule<TreeTaskTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(this TreeTaskTest self)
 		{
 			self.Log("======== TreeTask 测试开始 ========");

@@ -34,7 +34,7 @@ namespace WorldTree
 		/// </summary>
 		public TreeTween<string> treeTween;
 
-		[NodeRule(nameof(AddRule<TreeValueTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(TreeValueTest self)
 		{
 			self.AddChild(out self.valueFloat);
@@ -46,7 +46,7 @@ namespace WorldTree
 			self.valueFloat.Bind(self.valueString);
 		}
 
-		[NodeRule(nameof(UpdateRule<TreeValueTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(TreeValueTest self)
 		{
 			if (Input.GetKeyDown(KeyCode.A))

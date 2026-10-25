@@ -40,14 +40,14 @@ namespace WorldTree
 		/// </summary>
 		public TimeSpan difference;
 
-		[NodeRule(nameof(AddRule<UtcTimeTest>))]
+		[NodeRule(nameof(Add))]
 		private static void OnAddRule(UtcTimeTest self)
 		{
 			self.StartTime = DateTime.UtcNow;
 			self.OneTime = DateTime.UtcNow;
 		}
 
-		[NodeRule(nameof(GuiUpdateRule<UtcTimeTest>))]
+		[NodeRule(nameof(GuiUpdate))]
 		private static void OnGuiUpdateRule(UtcTimeTest self)
 		{
 

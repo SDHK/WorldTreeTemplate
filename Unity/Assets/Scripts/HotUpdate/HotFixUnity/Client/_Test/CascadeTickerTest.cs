@@ -18,7 +18,7 @@ namespace WorldTree
 		, AsRule<TestTickerCall>
 	{
 
-		[NodeRule(nameof(UpdateRule<CascadeTickerTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(CascadeTickerTest self)
 		{
 			if (Input.GetKeyDown(KeyCode.Q))
@@ -28,7 +28,7 @@ namespace WorldTree
 			}
 		}
 
-		[NodeRule(nameof(TestTickerCallRule<CascadeTickerTest>))]
+		[NodeRule(nameof(TestTickerCall))]
 		private static void OnTestTickerCallRule(CascadeTickerTest self)
 		{
 			self.Log("定时触发！！！");

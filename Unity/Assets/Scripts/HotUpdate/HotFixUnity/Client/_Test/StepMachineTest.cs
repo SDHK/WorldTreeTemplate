@@ -11,7 +11,7 @@
 		/// <summary> 步骤机 </summary>
 		public StepMachine stepMachine;
 
-		[NodeRule(nameof(AwakeRule<StepMachineTest>))]
+		[NodeRule(nameof(Awake))]
 		private static void OnAwakeRule(StepMachineTest self)
 		{
 			self.AddTemp(out self.stepMachine);
@@ -105,7 +105,7 @@
 			self.stepMachine.Run();
 		}
 
-		[NodeRule(nameof(UpdateRule<StepMachineTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(StepMachineTest self)
 		{
 			self.stepMachine.Update();

@@ -22,7 +22,7 @@ namespace WorldTree
 		/// </summary>
 		public MultilayerPerceptronManager multilayerPerceptronManager;
 
-		[NodeRule(nameof(AwakeRule<MultilayerPerceptronTest>))]
+		[NodeRule(nameof(Awake))]
 		private static void OnAwakeRule(MultilayerPerceptronTest self)
 		{
 			self.AddComponent(out self.multilayerPerceptronManager);
@@ -31,7 +31,7 @@ namespace WorldTree
 			self.multilayerPerceptronManager.AddLayer(1);
 		}
 
-		[NodeRule(nameof(UpdateRule<MultilayerPerceptronTest>))]
+		[NodeRule(nameof(Update))]
 		private static void OnUpdateRule(MultilayerPerceptronTest self)
 		{
 			if (Input.GetKeyDown(KeyCode.A))
