@@ -2,13 +2,13 @@
     "Summary": {
         "YooVersion": "2.1.1",
         "UnityVersion": "2021.3.16f1",
-        "BuildDate": "2026/10/22 17:18:18",
-        "BuildSeconds": 3,
+        "BuildDate": "2026/10/28 18:11:17",
+        "BuildSeconds": 4,
         "BuildTarget": 19,
         "BuildMode": 0,
         "BuildPipeline": "BuiltinBuildPipeline",
         "BuildPackageName": "DefaultPackage",
-        "BuildPackageVersion": "2026-10-22-1038",
+        "BuildPackageVersion": "2026-10-28-1091",
         "UniqueBundleName": false,
         "EnableAddressable": true,
         "LocationToLower": false,
@@ -24,7 +24,7 @@
         "AssetFileTotalCount": 19,
         "MainAssetTotalCount": 19,
         "AllBundleTotalCount": 4,
-        "AllBundleTotalSize": 2129622,
+        "AllBundleTotalSize": 2154687,
         "EncryptedBundleTotalCount": 0,
         "EncryptedBundleTotalSize": 0
     },
@@ -64,7 +64,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -75,7 +75,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -86,7 +86,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -97,7 +97,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -108,7 +108,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -119,7 +119,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -130,7 +130,7 @@
                 "aotDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "MainBundleSize": 1999855,
+            "MainBundleSize": 2020103,
             "DependAssets": []
         },
         {
@@ -141,7 +141,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -152,7 +152,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -163,7 +163,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -174,7 +174,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -185,7 +185,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -196,7 +196,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -207,7 +207,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -218,7 +218,7 @@
                 "hotUpdateDlls"
             ],
             "MainBundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "MainBundleSize": 115560,
+            "MainBundleSize": 120377,
             "DependAssets": []
         },
         {
@@ -251,10 +251,10 @@
         },
         {
             "BundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "FileName": "301e94145f1de893173aabae168ae2c5.bundle",
-            "FileHash": "301e94145f1de893173aabae168ae2c5",
-            "FileCRC": "e1c7546f",
-            "FileSize": 1999855,
+            "FileName": "3baf9041a192066f9aa19cd51f92b7f4.bundle",
+            "FileHash": "3baf9041a192066f9aa19cd51f92b7f4",
+            "FileCRC": "54da7b1d",
+            "FileSize": 2020103,
             "Encrypted": false,
             "Tags": [
                 "aotDlls"
@@ -272,10 +272,10 @@
         },
         {
             "BundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "FileName": "64a38892931e5653cdb96bdc72c86a68.bundle",
-            "FileHash": "64a38892931e5653cdb96bdc72c86a68",
-            "FileCRC": "34b2bb4b",
-            "FileSize": 115560,
+            "FileName": "d8d98bb35ebbead6d5917b94c9758419.bundle",
+            "FileHash": "d8d98bb35ebbead6d5917b94c9758419",
+            "FileCRC": "743a1661",
+            "FileSize": 120377,
             "Encrypted": false,
             "Tags": [
                 "hotUpdateDlls"

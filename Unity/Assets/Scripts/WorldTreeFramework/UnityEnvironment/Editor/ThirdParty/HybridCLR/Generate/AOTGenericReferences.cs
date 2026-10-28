@@ -299,13 +299,11 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// WorldTree.Branch<long>
 	// WorldTree.Branch<object>
 	// WorldTree.CallRule<object,object,float,int,object>
-	// WorldTree.CallRuleAsync<object,object,object,object>
 	// WorldTree.ConcurrentList<object>
 	// WorldTree.GenericOf<long,object>
 	// WorldTree.IBranch<long>
 	// WorldTree.IBranch<object>
 	// WorldTree.ICallRule<float,int,object>
-	// WorldTree.ICallRuleAsync<object,object>
 	// WorldTree.IDataCollection<object>
 	// WorldTree.INodeProxyRule.<>c__11<object,object>
 	// WorldTree.ISendRefRule<object,int>
@@ -316,7 +314,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// WorldTree.ISendRule<object>
 	// WorldTree.Internal.TreeTaskMethodBuilder<int>
 	// WorldTree.Internal.TreeTaskMethodBuilder<object>
-	// WorldTree.NodeRuleHelper.<CallRuleAsync>d__53<object,object,object,object>
 	// WorldTree.PoolManagerBase<object>
 	// WorldTree.Rule<WorldTree.NodeDataTest,object>
 	// WorldTree.Rule<WorldTree.TreeDataNodeDataTest3,object>
@@ -348,7 +345,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// WorldTree.UnitDictionary<object,object>
 	// WorldTree.UnitList<object>
 	// WorldTree.UnitStack<object>
-	// WorldTree.View<object>
 	// }}
 
 	public void RefMethods()
@@ -400,18 +396,19 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.ByteSequence.WriteUnmanaged<short>(short&)
 		// object WorldTree.ChildBranchSupplement.AddChild<object,object,object>(object,object&,object)
 		// object WorldTree.ComponentBranchSupplement.AddComponent<object,object,int>(object,object&,int)
-		// object WorldTree.ComponentBranchSupplement.AddComponent<object,object,object>(object,object&,object)
 		// long WorldTree.CoreObjectTypeInfoRule.TypeToCode<object>(WorldTree.ICoreObject)
-		// object WorldTree.DataBaseProxyRule.Find<object>(WorldTree.DataBaseProxy,long)
-		// System.Void WorldTree.DataBaseProxyRule.Insert<object>(WorldTree.DataBaseProxy,long,object)
-		// bool WorldTree.DataBaseProxyRule.Update<object>(WorldTree.DataBaseProxy,long,object)
+		// object WorldTree.DataBaseManagerRule.Find<object>(WorldTree.DataBaseManager,long)
+		// System.Void WorldTree.DataBaseManagerRule.Insert<object>(WorldTree.DataBaseManager,long,object)
+		// bool WorldTree.DataBaseManagerRule.Update<object>(WorldTree.DataBaseManager,long,object)
 		// object WorldTree.DictionaryExtension.GetOrAdd<object,object>(System.Collections.Concurrent.ConcurrentDictionary<object,object>,object)
+		// object WorldTree.FieldBranchSupplement.AddField<object,object,object>(object,object&,object)
 		// object WorldTree.GenericBranchSupplement.AddGeneric<long,object,object>(object,long,object&)
 		// object WorldTree.GenericBranchSupplement.AddGeneric<object,object,object>(object,object,object&)
 		// bool WorldTree.GenericBranchSupplement.TryGetGeneric<long,object,object>(object,long,object&)
 		// bool WorldTree.GenericBranchSupplement.TryGetGeneric<object,object,object>(object,object,object&)
 		// bool WorldTree.IBranch<object>.TryAddNode<object>(object,object)
 		// WorldTree.IDataCollection<object> WorldTree.IDataBase.GetCollection<object>()
+		// bool WorldTree.INode.TryAddSelfToTree<object,int>(int,WorldTree.INode)
 		// bool WorldTree.INode.TryAddSelfToTree<object,long>(long,WorldTree.INode)
 		// bool WorldTree.INode.TryAddSelfToTree<object,object>(object,WorldTree.INode)
 		// bool WorldTree.INode.TryGraftSelfToTree<object,long>(long,WorldTree.INode)
@@ -442,11 +439,12 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder.AwaitUnsafeOnCompleted<object,WorldTree.YooAssetTest.<InitializeYooAsset>d__2>(object&,WorldTree.YooAssetTest.<InitializeYooAsset>d__2&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<object,WorldTree.Server.TreeTaskTestRule.<NestedAdd>d__2>(object&,WorldTree.Server.TreeTaskTestRule.<NestedAdd>d__2&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<object,WorldTree.Server.TreeTaskTestRule.<ThrowInside>d__8>(object&,WorldTree.Server.TreeTaskTestRule.<ThrowInside>d__8&)
-		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>>(object&,WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>&)
-		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>>(object&,WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>>(object&,WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>>(object&,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>>(object&,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>>(object&,WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.YooAssetFileSource.<OpenAsync>d__10>(object&,WorldTree.YooAssetFileSource.<OpenAsync>d__10&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,WorldTree.YooAssetManager.<LoadAsync>d__5>(object&,WorldTree.YooAssetManager.<LoadAsync>d__5&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder.Start<WorldTree.Server.TreeTaskTestRule.<BridgeLink>d__6>(WorldTree.Server.TreeTaskTestRule.<BridgeLink>d__6&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder.Start<WorldTree.Server.TreeTaskTestRule.<BridgeTask>d__5>(WorldTree.Server.TreeTaskTestRule.<BridgeTask>d__5&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder.Start<WorldTree.Server.TreeTaskTestRule.<CancelWait>d__7>(WorldTree.Server.TreeTaskTestRule.<CancelWait>d__7&)
@@ -474,14 +472,13 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<int>.Start<WorldTree.Server.TreeTaskTestRule.<NestedAdd>d__2>(WorldTree.Server.TreeTaskTestRule.<NestedAdd>d__2&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<int>.Start<WorldTree.Server.TreeTaskTestRule.<ThrowInside>d__8>(WorldTree.Server.TreeTaskTestRule.<ThrowInside>d__8&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<int>.Start<object>(object&)
-		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>>(WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>&)
-		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>>(WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>>(WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>&)
-		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<object>(object&)
-		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>>(WorldTree.AddressablesManager.<LoadAssetAsync>d__1<object,object>&)
-		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>>(WorldTree.AssetManager.<LoadAssetAsync>d__1<object,object>&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.YooAssetFileSource.<OpenAsync>d__10>(WorldTree.YooAssetFileSource.<OpenAsync>d__10&)
+		// System.Void WorldTree.Internal.TreeTaskMethodBuilder<object>.Start<WorldTree.YooAssetManager.<LoadAsync>d__5>(WorldTree.YooAssetManager.<LoadAsync>d__5&)
+		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>>(WorldTree.AssetManagerRule.<LoadAssetAsync>d__3<object>&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__0<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__1<object,object>&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>>(WorldTree.GameObjectNodeHelper.<AddGameObjectNode>d__2<object,object>&)
@@ -508,21 +505,23 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.TaskTest.<TaskD>d__6>(WorldTree.TaskTest.<TaskD>d__6&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.TaskTest.<Test>d__3>(WorldTree.TaskTest.<Test>d__3&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.TaskTest.<TestB>d__4>(WorldTree.TaskTest.<TestB>d__4&)
+		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetFileSource.<OpenAsync>d__10>(WorldTree.YooAssetFileSource.<OpenAsync>d__10&)
+		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetManager.<LoadAsync>d__5>(WorldTree.YooAssetManager.<LoadAsync>d__5&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetTest.<InitializeYooAsset1>d__3>(WorldTree.YooAssetTest.<InitializeYooAsset1>d__3&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetTest.<InitializeYooAsset2>d__4>(WorldTree.YooAssetTest.<InitializeYooAsset2>d__4&)
 		// System.Void WorldTree.Internal.TreeTaskStateMachine.SetStateMachine<WorldTree.YooAssetTest.<InitializeYooAsset>d__2>(WorldTree.YooAssetTest.<InitializeYooAsset>d__2&)
 		// bool WorldTree.Node.TryGraftSelfToTree<object,object>(object,WorldTree.INode)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object,int>(object,object,long,object&,int)
-		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object,object>(object,object,long,object&,object)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,long,object>(object,object,long,object&)
 		// object WorldTree.NodeBranchHelper.AddNode<object,object,object,object>(object,object,object,object&)
+		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,int,object>(WorldTree.INode,object,int,WorldTree.INode,object)
+		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,int>(WorldTree.INode,object,int,WorldTree.INode)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long,int>(WorldTree.INode,object,long,WorldTree.INode,int)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long,object>(WorldTree.INode,object,long,WorldTree.INode,object)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,long>(WorldTree.INode,object,long,WorldTree.INode)
 		// WorldTree.INode WorldTree.NodeBranchHelper.AddNodeToTree<object,object>(WorldTree.INode,object,object,WorldTree.INode)
 		// long WorldTree.NodeBranchHelper.GetKey<long>(WorldTree.INode)
 		// object WorldTree.NodeRule.GetParent<object,object>(object,object&)
-		// WorldTree.TreeTask<object> WorldTree.NodeRuleHelper.CallRuleAsync<object,object,object,object>(object,object,object,object)
 		// bool WorldTree.NodeRuleHelper.TrySendRule<object,int>(WorldTree.INode,object,int)
 		// bool WorldTree.NodeRuleHelper.TrySendRule<object,object>(WorldTree.INode,object,object)
 		// bool WorldTree.PoolManagerBase<object>.TryGet<object>(object&)

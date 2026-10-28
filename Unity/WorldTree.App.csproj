@@ -323,6 +323,9 @@
     <Reference Include="WorldTree.Core">
       <HintPath>Assets\Scripts\AOT\Plugins\WorldTree\WorldTree.Core.dll</HintPath>
     </Reference>
+    <Reference Include="WorldTree.Module">
+      <HintPath>Assets\Scripts\AOT\Plugins\WorldTree\WorldTree.Module.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>D:\1Make\GameEngine\Unity3D\2021.3.16f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
     </Reference>

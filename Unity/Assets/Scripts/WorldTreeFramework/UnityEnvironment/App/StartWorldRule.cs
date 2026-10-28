@@ -7,7 +7,6 @@
 
 */
 
-using System;
 using System.IO;
 using UnityEngine;
 
@@ -23,12 +22,23 @@ namespace WorldTree
 				WorldTreeCore core = self.Line.Core;
 
 				// 挂资源管理器，并装上 YooAsset 来源
-				self.Line.GetAssetManager().AddAssetSource<YooAssetManager>();
+				YooAssetManager yooAsset = self.Line.GetAssetManager().AddAssetSource<YooAssetManager>();
 
-				// 读配置：编辑器直读工程外
-				string bytesRoot = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "ExcelTool", "Output", "Bytes", "c"));
-				ConfigLoader.Load<Tables>(core, Path.Combine(bytesRoot, "GameConfig"));
-				ConfigLoader.Load<StartTables>(core, Path.Combine(bytesRoot, "StartConfig", "Client"));
+				// 按平台选择配置源
+				FileManagerAccessor files = self.GetFileManager();
+				if (Define.IsEditor)
+				{
+					string bytesRoot = Path.GetFullPath(Path.Combine(
+						Application.dataPath, "..", "..", "ExcelTool", "Output", "Bytes", "c"));
+					files.AddSource(FileChannel.Pack, ConfigLoader.Group, string.Empty, new LocalFileSource(bytesRoot));
+				}
+				else
+				{
+					files.AddSource(FileChannel.Pack, ConfigLoader.Group, string.Empty, new YooAssetFileSource(yooAsset));
+				}
+
+				ConfigLoader.Load<Tables>(self, ConfigLoader.GameConfigPath);
+				ConfigLoader.Load<StartTables>(self, ConfigLoader.StartConfigPath);
 				ConfigLoader.CreateWorldLines(core);
 			}
 		}

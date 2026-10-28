@@ -27,6 +27,11 @@ namespace WorldTree
 		public ResourcePackage package;
 
 		/// <summary>
+		/// 默认资源包
+		/// </summary>
+		public ResourcePackage Package => package;
+
+		/// <summary>
 		/// 已加载资源句柄缓存（按地址复用）
 		/// </summary>
 		public Dictionary<string, AssetHandle> handleDict = new();

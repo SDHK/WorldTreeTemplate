@@ -9,9 +9,7 @@
 
 using Luban;
 using System;
-using System.IO;
 using System.Linq;
-using UnityEngine;
 
 namespace WorldTree
 {
@@ -21,23 +19,47 @@ namespace WorldTree
 	public static class ConfigLoader
 	{
 		/// <summary>
+		/// 配置使用的文件分组。
+		/// </summary>
+		public const string Group = "Config";
+
+		/// <summary>
+		/// 游戏配置目录。
+		/// </summary>
+		public const string GameConfigPath = "GameConfig";
+
+		/// <summary>
+		/// 客户端起服配置目录。
+		/// </summary>
+		public const string StartConfigPath = "StartConfig/Client";
+
+		/// <summary>
+		/// Luban 表文件扩展名。
+		/// </summary>
+		public const string Extension = ".bytes";
+
+		/// <summary>
+		/// 拼接表文件 key。
+		/// </summary>
+		private static string BuildKey(string prefix, string name)
+		{
+			string head = string.IsNullOrEmpty(prefix) ? string.Empty : prefix.Replace('\\', '/').Trim('/');
+			return head.Length == 0 ? name + Extension : head + "/" + name + Extension;
+		}
+
+		/// <summary>
 		/// 读一张表并登记到核心。
 		/// </summary>
-		public static void Load<T>(WorldTreeCore core, string path) where T : class
+		public static void Load<T>(INode node, string path) where T : class
 		{
+			FileManagerAccessor files = node.GetFileManager();
+			WorldTreeCore core = node.World.Line.Core;
 			Func<string, ByteBuf> loader = name =>
 			{
-				if (Define.IsEditor)
-				{
-					string file = Path.Combine(path, name + ".bytes");
-					if (!File.Exists(file)) throw new FileNotFoundException($"找不到配置: {file}");
-					return new ByteBuf(File.ReadAllBytes(file));
-				}
-				else
-				{
-					TextAsset textAsset = core.MainLine.GetAssetManager().LoadAsset<TextAsset>(name);
-					return new ByteBuf(textAsset.bytes);
-				}
+				string key = BuildKey(path, name);
+				byte[] bytes = files.ReadAllBytes(
+					new FileAddress(FileChannel.Pack, Group, string.Empty, key));
+				return new ByteBuf(bytes);
 			};
 			core.ConfigManager.Add((T)Activator.CreateInstance(typeof(T), loader));
 		}

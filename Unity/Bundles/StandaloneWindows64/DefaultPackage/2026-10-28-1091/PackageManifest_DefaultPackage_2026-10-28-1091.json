@@ -6,7 +6,7 @@
     "OutputNameStyle": 0,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "2026-10-22-1038",
+    "PackageVersion": "2026-10-28-1091",
     "AssetList": [
         {
             "Address": "MainWindow",
@@ -187,10 +187,10 @@
         },
         {
             "BundleName": "assets_assetbundles_dlls_aotdlls.bundle",
-            "UnityCRC": 53468784,
-            "FileHash": "301e94145f1de893173aabae168ae2c5",
-            "FileCRC": "e1c7546f",
-            "FileSize": 1999855,
+            "UnityCRC": 3861590368,
+            "FileHash": "3baf9041a192066f9aa19cd51f92b7f4",
+            "FileCRC": "54da7b1d",
+            "FileSize": 2020103,
             "Encrypted": false,
             "Tags": [
                 "aotDlls"
@@ -199,10 +199,10 @@
         },
         {
             "BundleName": "assets_assetbundles_dlls_hotupdatedlls.bundle",
-            "UnityCRC": 972863821,
-            "FileHash": "64a38892931e5653cdb96bdc72c86a68",
-            "FileCRC": "34b2bb4b",
-            "FileSize": 115560,
+            "UnityCRC": 580990494,
+            "FileHash": "d8d98bb35ebbead6d5917b94c9758419",
+            "FileCRC": "743a1661",
+            "FileSize": 120377,
             "Encrypted": false,
             "Tags": [
                 "hotUpdateDlls"

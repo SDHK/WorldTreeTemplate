@@ -42,6 +42,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\WorldTreeFramework\Framework\Core\WorldTree.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\..\WorldTreeFramework\Framework\Module\WorldTree.Module.csproj" />
     <ProjectReference Include="..\..\Analysis\Console.Analysis.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\HotFix\Server.HotFix.csproj" />
   </ItemGroup>
