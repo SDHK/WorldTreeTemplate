@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace WorldTree
 {
@@ -13,6 +13,20 @@ namespace WorldTree
 		[NodeRule(nameof(Add))]
 		private static void OnAddRule(ViewTest self)
 		{
+			ViewTestRunner.Run(self).Coroutine();
+		}
+	}
+
+	/// <summary>
+	/// 视图测试执行器
+	/// </summary>
+	internal static class ViewTestRunner
+	{
+		/// <summary>
+		/// 执行视图测试
+		/// </summary>
+		public static async TreeTask Run(ViewTest self)
+		{
 			self.Log($"视图测试开始！！!");
 
 			if (!self.World.TryGetComponent(out ViewManager windowManager))
@@ -20,12 +34,12 @@ namespace WorldTree
 				self.World.AddComponent(out windowManager);
 			}
 
-			ViewLayer viewLayer = windowManager.GetLayer(0);
+			ViewLayer viewLayer = await windowManager.GetLayer(0);
 			viewLayer.TryAddView(out ViewTestWindow view);
 			view.Name = "测试窗口ViewTestWindow";
 
 			// 1. 打开
-			viewLayer.OpenView(view.Type);
+			await viewLayer.OpenView(view.Type);
 			Check(view.IsOpen, "打开后 IsOpen");
 			Check(view.Bind.Value != null, "打开后 Bind 存在");
 			Check(ReferenceEquals(view.Bind.Value.Parent, view), "Bind.Parent == View");
@@ -39,14 +53,14 @@ namespace WorldTree
 			Check(view.IsShow, "显示后 IsShow = true");
 
 			// 3. 关闭
-			viewLayer.CloseView(view.Type);
+			await viewLayer.CloseView(view.Type);
 			Check(!view.IsOpen, "关闭后 IsOpen = false");
 			Check(viewLayer.LayerCount == 0, "关闭后层内窗口数 = 0");
 
 			// 4. 重开 + 释放
-			viewLayer.OpenView(view.Type);
+			await viewLayer.OpenView(view.Type);
 			Check(view.IsOpen, "重开后 IsOpen");
-			viewLayer.CloseView(view.Type);
+			await viewLayer.CloseView(view.Type);
 			Check(!view.IsOpen, "再次关闭后 IsOpen = false");
 
 			view.Dispose();
