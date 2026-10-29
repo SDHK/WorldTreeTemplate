@@ -6,6 +6,7 @@
 * 描述：
 
 */
+using System;
 using UnityEngine;
 
 namespace WorldTree
@@ -54,13 +55,45 @@ namespace WorldTree
 		}
 
 		/// <summary>
+		/// 加载预制体并从池获取实例，节点挂到指定节点下。
+		/// </summary>
+		public GameObjectNode PoolGet<N>(string address, N parent, Transform transformParent = null)
+			where N : class, INode, AsChildBranch
+		{
+			GameObject prefab = World.GetAssetManager().LoadAsset<GameObject>(address);
+			if (prefab == null) throw new ArgumentNullException(nameof(prefab));
+
+			GameObjectNode node = parent.AddChild(out GameObjectNode _);
+			node.Bind(GetPool(prefab), transformParent);
+			return node;
+		}
+
+		/// <summary>
+		/// 异步加载预制体并从池获取实例，节点挂到指定节点下。
+		/// </summary>
+		public async TreeTask<GameObjectNode> PoolGetAsync<N>(string address, N parent, Transform transformParent = null)
+			where N : class, INode, AsChildBranch
+		{
+			GameObject prefab = await World.GetAssetManager().LoadAssetAsync<GameObject>(address);
+			if (prefab == null) throw new ArgumentNullException(nameof(prefab));
+
+			GameObjectNode node = parent.AddChild(out GameObjectNode _);
+			node.Bind(GetPool(prefab), transformParent);
+			return node;
+		}
+
+		/// <summary>
 		/// 创建池化节点
 		/// </summary>
 		private GameObjectNode CreateNode(GameObject prefab, Transform parent)
 		{
+			if (prefab == null)
+			{
+				throw new System.ArgumentNullException(nameof(prefab));
+			}
+
 			GameObjectNode node = World.AddChild(out GameObjectNode _);
-			if (parent == null) node.Instantiate(prefab);
-			else node.Instantiate(prefab, parent);
+			node.Bind(GetPool(prefab), parent);
 			return node;
 		}
 
