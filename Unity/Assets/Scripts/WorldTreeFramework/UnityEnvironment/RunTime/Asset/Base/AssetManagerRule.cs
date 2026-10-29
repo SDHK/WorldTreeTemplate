@@ -3,7 +3,7 @@
 * 作者：闪电黑客
 * 日期：2026/10/22
 
-* 描述：资源管理器的扩展方法。加载、释放都从这里走。
+* 描述：资源管理器的扩展方法。加载、卸载都从这里走。
 
 */
 
@@ -25,49 +25,136 @@ namespace WorldTree
 		}
 
 		/// <summary>
-		/// 给管理器装上资源来源。只有一个来源，重复调用直接返回已有的。
+		/// 给默认组装上资源来源
 		/// </summary>
 		public static TSource AddAssetSource<TSource>(this AssetManager self)
 			where TSource : class, INode, IAssetSource, AsRule<Awake>, FieldOf<AssetManager>
 		{
-			if (self.Source is TSource exists) return exists;
+			if (self.TryGetSource(AssetManager.DefaultGroup, out _))
+				throw new System.Exception($"资源分组重复: {AssetManager.DefaultGroup}");
 
 			self.AddField(out TSource source);
-			self.Source = source;
+			self.AddSource(AssetManager.DefaultGroup, source, 100);
 			return source;
 		}
 
 		/// <summary>
-		/// 同步加载
+		/// 给指定组装上资源来源；group 同时作为初始化参数
 		/// </summary>
-		public static T LoadAsset<T>(this AssetManager self, string address) where T : Object
+		public static TSource AddAssetSource<TSource>(this AssetManager self, string group, int priority = 100)
+			where TSource : class, INode, IAssetSource, AsRule<Awake<string>>, FieldOf<AssetManager>
 		{
-			return self.Source.Load(address) as T;
+			if (self.TryGetSource(group, out _))
+				throw new System.Exception($"资源分组重复: {group ?? AssetManager.DefaultGroup}");
+
+			self.AddField(out TSource source, group);
+			self.AddSource(group, source, priority);
+			return source;
 		}
 
 		/// <summary>
-		/// 异步加载
+		/// 同步加载；无 @ 前缀走链式，@Pack:Key 指定包
 		/// </summary>
-		public static async TreeTask<T> LoadAssetAsync<T>(this AssetManager self, string address) where T : Object
+		public static T LoadAsset<T>(this AssetManager self, string address) where T : Object
 		{
-			Object asset = await self.Source.LoadAsync(address);
+			return self.LoadAsset<T>(AssetAddress.Parse(address));
+		}
+
+		/// <summary>
+		/// 同步加载指定包和地址
+		/// </summary>
+		public static T LoadAsset<T>(this AssetManager self, string pack, string key) where T : Object
+		{
+			IAssetSource source = ResolveSource(self, pack, key);
+			return source.Load(key) as T;
+		}
+
+		/// <summary>
+		/// 同步加载指定资源地址
+		/// </summary>
+		public static T LoadAsset<T>(this AssetManager self, AssetAddress address) where T : Object
+		{
+			IAssetSource source = ResolveSource(self, address.Pack, address.Key);
+			return source.Load(address.Key) as T;
+		}
+
+		/// <summary>
+		/// 异步加载；无 @ 前缀走链式，@Pack:Key 指定包
+		/// </summary>
+		public static TreeTask<T> LoadAssetAsync<T>(this AssetManager self, string address) where T : Object
+		{
+			return self.LoadAssetAsync<T>(AssetAddress.Parse(address));
+		}
+
+		/// <summary>
+		/// 异步加载指定包和地址
+		/// </summary>
+		public static async TreeTask<T> LoadAssetAsync<T>(this AssetManager self, string pack, string key) where T : Object
+		{
+			IAssetSource source = ResolveSource(self, pack, key);
+			Object asset = await source.LoadAsync(key);
 			return asset as T;
 		}
 
 		/// <summary>
-		/// 释放一个地址
+		/// 异步加载指定资源地址
 		/// </summary>
-		public static void ReleaseAsset(this AssetManager self, string address)
+		public static async TreeTask<T> LoadAssetAsync<T>(this AssetManager self, AssetAddress address) where T : Object
 		{
-			self.Source.Release(address);
+			IAssetSource source = ResolveSource(self, address.Pack, address.Key);
+			Object asset = await source.LoadAsync(address.Key);
+			return asset as T;
 		}
 
 		/// <summary>
-		/// 释放全部
+		/// 卸载；无 @ 前缀走链式，@Pack:Key 指定包
 		/// </summary>
-		public static void ReleaseAllAsset(this AssetManager self)
+		public static void UnloadAsset(this AssetManager self, string address)
 		{
-			self.Source.ReleaseAll();
+			self.UnloadAsset(AssetAddress.Parse(address));
 		}
+
+		/// <summary>
+		/// 卸载指定包和地址
+		/// </summary>
+		public static void UnloadAsset(this AssetManager self, string pack, string key)
+		{
+			ResolveSource(self, pack, key).Release(key);
+		}
+
+		/// <summary>
+		/// 卸载指定资源地址
+		/// </summary>
+		public static void UnloadAsset(this AssetManager self, AssetAddress address)
+		{
+			ResolveSource(self, address.Pack, address.Key).Release(address.Key);
+		}
+
+		/// <summary>
+		/// 解析资源来源
+		/// </summary>
+		private static IAssetSource ResolveSource(AssetManager self, string pack, string key)
+		{
+			return string.IsNullOrEmpty(pack)
+				? self.ResolveSource(key)
+				: self.GetSource(pack);
+		}
+
+		/// <summary>
+		/// 卸载全部
+		/// </summary>
+		public static void UnloadAllAssets(this AssetManager self)
+		{
+			self.ReleaseAll();
+		}
+
+		/// <summary>
+		/// 卸载指定包
+		/// </summary>
+		public static void UnloadAllAssets(this AssetManager self, string pack)
+		{
+			self.GetSource(pack).ReleaseAll();
+		}
+
 	}
 }

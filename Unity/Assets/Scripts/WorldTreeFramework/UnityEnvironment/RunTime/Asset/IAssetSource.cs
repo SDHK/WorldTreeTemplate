@@ -15,6 +15,11 @@ namespace WorldTree
 	public interface IAssetSource : INode
 	{
 		/// <summary>
+		/// 是否存在地址
+		/// </summary>
+		public bool Exists(string address);
+
+		/// <summary>
 		/// 同步加载
 		/// </summary>
 		public UnityEngine.Object Load(string address);

@@ -36,6 +36,35 @@ namespace WorldTree
 		}
 
 		/// <summary>
+		/// 加载预制体并从池获取实例；无冒号走链式，Pack:Key 指定包
+		/// </summary>
+		public GameObjectNode PoolGet(string address, Transform parent = null)
+		{
+			GameObject prefab = World.GetAssetManager().LoadAsset<GameObject>(address);
+			return CreateNode(prefab, parent);
+		}
+
+		/// <summary>
+		/// 异步加载预制体并从池获取实例；无冒号走链式，Pack:Key 指定包
+		/// </summary>
+		public async TreeTask<GameObjectNode> PoolGetAsync(string address, Transform parent = null)
+		{
+			GameObject prefab = await World.GetAssetManager().LoadAssetAsync<GameObject>(address);
+			return CreateNode(prefab, parent);
+		}
+
+		/// <summary>
+		/// 创建池化节点
+		/// </summary>
+		private GameObjectNode CreateNode(GameObject prefab, Transform parent)
+		{
+			GameObjectNode node = World.AddChild(out GameObjectNode _);
+			if (parent == null) node.Instantiate(prefab);
+			else node.Instantiate(prefab, parent);
+			return node;
+		}
+
+		/// <summary>
 		/// 获取池
 		/// </summary>
 		public GameObjectPool GetPool(GameObject prefab)

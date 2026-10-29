@@ -6,6 +6,7 @@
 * 描述：
 
 */
+using System;
 using UnityEngine;
 
 
@@ -16,8 +17,25 @@ namespace WorldTree
 	/// GameObject对象池
 	/// </summary>
 	public class GameObjectPool : GenericPool<GameObject>, ChildOf<GameObjectPoolManager>
+		, AsChildBranch
 		, AsRule<Awake>
+		, AsRule<ClockTimerTimeout>
 	{
+		/// <summary>
+		/// 空闲多久开始清理，秒
+		/// </summary>
+		private const int IdleSeconds = 60;
+
+		/// <summary>
+		/// 清理间隔，秒
+		/// </summary>
+		private const int TrimIntervalSeconds = 1;
+
+		/// <summary>
+		/// 空闲计时器
+		/// </summary>
+		internal ClockTimer idleTimer;
+
 		/// <summary>
 		/// 预制体
 		/// </summary>
@@ -31,6 +49,9 @@ namespace WorldTree
 		public GameObjectPool()
 		{
 			ObjectType = typeof(GameObject);
+
+			// 不限制池内空闲对象数量，只靠空闲计时的 DisposeOne 逐步清理。
+			MaxLimit = -1;
 
 			objName = "GameObject";
 
@@ -64,16 +85,55 @@ namespace WorldTree
 		}
 
 		/// <summary>
+		/// 获取对象
+		/// </summary>
+		public override GameObject Get()
+		{
+			RefreshTime();
+			return base.Get();
+		}
+
+		/// <summary>
 		/// 获取对象（设置父节点）
 		/// </summary>
 		public GameObject Get(Transform parent)
 		{
+			RefreshTime();
 			GameObject gameObject = DequeueOrNewObject();
 			gameObject.transform.parent = parent;
 			objectOnGet?.Invoke(gameObject);
 			Preload();
 
 			return gameObject;
+		}
+
+		/// <summary>
+		/// 回收对象
+		/// </summary>
+		public override void Recycle(object obj)
+		{
+			RefreshTime();
+			base.Recycle(obj);
+		}
+
+		/// <summary>
+		/// 刷新空闲计时
+		/// </summary>
+		internal void RefreshTime()
+		{
+			idleTimer?.Restart(TimeSpan.FromSeconds(IdleSeconds));
+		}
+
+		/// <summary>
+		/// 空闲到点
+		/// </summary>
+		internal void OnIdleTimeout()
+		{
+			if (IsDisposed) return;
+
+			if (Count > 0) DisposeOne();
+
+			idleTimer.Restart(TimeSpan.FromSeconds(Count > 0 ? TrimIntervalSeconds : IdleSeconds));
 		}
 
 		/// <summary>
@@ -115,6 +175,26 @@ namespace WorldTree
 
 	}
 
+	/// <summary>
+	/// GameObjectPool 法则
+	/// </summary>
+	public static class GameObjectPoolRule
+	{
+		class Awake : AwakeRule<GameObjectPool>
+		{
+			protected override void Execute(GameObjectPool self)
+			{
+				self.idleTimer = self.AddChild(out ClockTimer _);
+				self.RefreshTime();
+			}
+		}
 
-
+		class Timeout : ClockTimerTimeoutRule<GameObjectPool>
+		{
+			protected override void Execute(GameObjectPool self)
+			{
+				self.OnIdleTimeout();
+			}
+		}
+	}
 }
