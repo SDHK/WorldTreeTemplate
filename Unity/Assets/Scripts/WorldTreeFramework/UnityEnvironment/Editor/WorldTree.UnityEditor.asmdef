@@ -17,6 +17,7 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "WorldTree.Core.dll",
+        "WorldTree.Module.dll",
         "Sirenix.OdinInspector.Attributes.dll",
         "Sirenix.OdinInspector.Editor.dll",
         "Sirenix.Utilities.dll",

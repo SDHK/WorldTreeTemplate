@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\HotUpdate\HotFixUnity\Client\_Test\SphereManagerTest.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\HotFixUnity\Client\_Test\SerializeTest.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\HotFixUnity\Client\_Test\SphereTest.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\HotFixUnity\Client\_Test\ViewTestWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\HotUpdate\HotFixUnity\WorldTree.HotFixUnity.asmdef" />

@@ -9,7 +9,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "WorldTree.Core.dll"
+        "WorldTree.Core.dll",
+        "WorldTree.Module.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [],
